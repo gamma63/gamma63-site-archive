@@ -5,8 +5,13 @@
     <title>Gamma World News</title>
     <link>http://gamma-world.eu</link>
     <item>
+      <title>Gamma World got its 3rd generation after 10 days</title>
+      <pubDate>Sat, 31 Aug 2024 13:17:00 +0300</pubDate>
+      <description>What's new? New design on the site, now ruffle is located on Gamma World servers not on unpkg, improved compatibility with IE</description>
+    </item>
+    <item>
       <title>Gamma World got forum and wiki</title>
-      <pubDate>Fri, 28 Aug 2024 18:35:00 +0300</pubDate>
+      <pubDate>Wed, 28 Aug 2024 18:35:00 +0300</pubDate>
     </item>
     <item>
       <title>MIDI's on Gamma World!</title>
