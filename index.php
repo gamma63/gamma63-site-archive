@@ -102,7 +102,7 @@
                         <a href="http://web-rasbur.42web.io" target="_blank"><img src="img/webrasbur.gif" alt="Web-Rasbur"></a>
                         <a href="http://mayner-net.42web.io"><img src="img/mnetad.png" alt="mayner-net"></a>
                         <a href="http://simakov.42web.io"><img src="img/simka.png" alt="mayner-net"></a>
-                        <a href="https//yarik21yt.serv00.net" target="_blank"><img src="http://yarik21yt.serv00.net/assets/splash_btn.png" alt="YARIK21YT-SITE"></a>
+                        <a href="http://yarik21yt.serv00.net" target="_blank"><img src="http://yarik21yt.serv00.net/assets/splash_btn.png" alt="YARIK21YT-SITE"></a>
                         <a href="http://sobka228.github.io/" title="Новости, Блог, Проекты, Приколюхи, ПОБЕГ ОТ СОБКЕ. Заходи к нам!" alt="Новости, Блог, Проекты, Приколюхи, ПОБЕГ ОТ СОБКЕ. Заходи к нам!"><img src="http://sobka228.github.io/logo.gif" width="88" height="31" border="0"> </a>
                         <a href="http://netquake.io/quake"><img src="img/quake.gif" alt="QUAKE now! (WASM required)"></a>
                         <p>
