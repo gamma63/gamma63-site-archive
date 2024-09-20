@@ -85,7 +85,7 @@
             </tr>
         </table>
 
-        <div id="musicToggle" onclick="toggleMusic()">Turn off music</div> <!-- "Turn off music" -->
+        <button id="musicToggle" onclick="toggleMusic()">Turn off music</button> <!-- "Turn off music" -->
         
         <table border="0">
             <tr>
