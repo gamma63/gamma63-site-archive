@@ -6,14 +6,11 @@ $array = mysqli_fetch_array($query);
 
 ?>
 
-<!DOCTYPE html>
-	<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Gamma World - <?=$array['login']?></title>
-	</head>
+<head>
+	<meta charset="UTF-8">
+	<title>Gamma World - <?=$array['login']?></title>
+</head>
 	
-	<body>
-		<center><h1>Profile from "<?=$array['login']?>"</h1></center>
-	</body>
-</html>
+<body>
+	<center><h1>Profile from "<?=$array['login']?>"</h1></center>
+</body>
