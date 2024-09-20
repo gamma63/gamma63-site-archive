@@ -16,7 +16,7 @@ if(empty($login)||empty($pass)||empty($r_pass)){
 if($conn -> query($sql)){
 		
 		echo"Success, you are going to be redirected in an moment...";
-        header("Location: profile.php");
+        header("Location: ../index.php");
         die();
 		
 	}else{
