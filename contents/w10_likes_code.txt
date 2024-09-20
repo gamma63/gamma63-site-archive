@@ -1,0 +1,3 @@
+<a id="likebtn" rel="nofollow" href="http://yoursite.w10.site/cgi-bin/like/?add=like">
+  <img id="like" src="http://yoursite.w10.site/cgi-bin/like" alt="like" border="0">
+</a>
