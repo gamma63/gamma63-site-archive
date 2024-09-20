@@ -92,7 +92,7 @@
                 <td>
                     <iframe id="mainframe" src="contents/index.php"></iframe>
                     <footer id="footer">
-                        &copy; 2024 Gamma World, tested in IE 6.0<br>
+                        &copy; 2024 Gamma World, tested in mypal<br>
                         <br>
                         <!-- banner images -->
                         <a href="http://www.old-web.com"><img src="http://www.old-web.com/images/banners/button.gif" width="88" height="31" border="0"></a>
