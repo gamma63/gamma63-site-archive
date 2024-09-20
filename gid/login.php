@@ -18,7 +18,7 @@ if(empty($login) || empty($pass)){
 		
 		echo"Welcome".$row['login'];
 		echo"!";
-		header("Location: profile.php");
+		header("Location: ../index.php");
 }
 }
 }
@@ -47,6 +47,3 @@ if(empty($login) || empty($pass)){
 		<button type="submit">Login</button>
 </form>	
 </center>
-
-<link href="../flood.css" rel="stylesheet" type="text/css" media="all" />
-<script src="../js/FLOOD.js"></script>
