@@ -9,7 +9,6 @@
 </style>
 
 <center>
-<object id="melonland-surf-club" data="http://melonland.net/surf-badge.svg?fill=#ffffff" type="image/svg+xml" style="width: 100px; height: 100px;"></object><br>          
 <h1>Welcome to Gamma World website!</h1>
 <p>We are surprised how you found this website :-)</p>
 <p>Explore stuff here :D</p>

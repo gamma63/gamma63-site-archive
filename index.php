@@ -62,23 +62,26 @@
             <tr>
                 <img src="img/header.gif"><img src="img/header.gif"><img src="img/header.gif">
                 <td id="navbar" style="padding: 5px; border-bottom: none;">
-                    <nav id="navbar">
-                        <ul><br>
-                            <li><a href="?z=contents/index.php"><img src="img/home.gif" alt="home"></a></li>
-                            <li><a href="contents/feed.rss"><img src="img/news.gif" alt="rss"></a></li>
-                            <li><a href="?z=contents/log.php"><img src="img/devlog.gif" alt="devlog"></a></li>
-                            <li><a href="?z=contents/archive.php"><img src="img/archive.gif" alt="archive"></a></li>
-                            <li><a href="?z=contents/games.php"><img src="img/games.gif" alt="games"></a></li>
-                            <li><a href="?z=contents/contacts.php"><img src="img/contact.gif" alt="contacts"></a></li>
-                            <li><a href="?z=contents/movies.php"><img src="img/movies.png" alt="movies"></a></li>
-                            <li><a href="?z=contents/tutorials.php"><img src="img/tutorial.gif" alt="tutorials"></a></li>
-                            <li><a href="?z=contents/midi.php"><img src="img/music.png" alt="music"></a></li>
-                            <li><a href="https://gamma-world.eu/bitbybyte-forum"><img src="img/forum.gif" alt="forum"></a></li>
-                            <li><a href="?z=gid/register.php"><img src="img/register.gif" alt="register"></a></li>
-                            <li><a href="?z=gid/login.php"><img src="img/login.gif" alt="login"></a></li>
-                            <li><a href="?z=contents/other.php"><img src="img/other.png" alt="other"></a></li>
-                        </ul>
-                    </nav>
+                <nav id="navbar">
+                    <ul><br>
+                        <li><a href="?z=contents/index.php"><img src="img/home.gif" alt="home"></a></li>
+                        <li><a href="contents/feed.rss"><img src="img/news.gif" alt="rss"></a></li>
+                        <li><a href="?z=contents/log.php"><img src="img/devlog.gif" alt="devlog"></a></li>
+                        <li><a href="?z=contents/archive.php"><img src="img/archive.gif" alt="archive"></a></li>
+                        <li><a href="?z=contents/games.php"><img src="img/games.gif" alt="games"></a></li>
+                        <li><a href="?z=contents/contacts.php"><img src="img/contact.gif" alt="contacts"></a></li>
+                        <li><a href="?z=contents/movies.php"><img src="img/movies.png" alt="movies"></a></li>
+                        <li><a href="?z=contents/tutorials.php"><img src="img/tutorial.gif" alt="tutorials"></a></li>
+                        <li><a href="?z=contents/midi.php"><img src="img/music.png" alt="music"></a></li>
+                        <li><a href="https://gamma-world.eu/bitbybyte-forum"><img src="img/forum.gif" alt="forum"></a></li>
+                        <li><a href="?z=gid/register.php"><img src="img/register.gif" alt="register"></a></li>
+                        <li><a href="?z=gid/login.php"><img src="img/login.gif" alt="login"></a></li>
+                        <li><a href="?z=gid/user_list.php"><img src="img/users.gif" alt="User List"></a></li>
+                        <li><a href="?z=gid/profile.php"><img src="img/profile.gif" alt="Profile"></a></li>
+                        <li><a href="?z=contents/other.php"><img src="img/other.png" alt="other"></a></li>
+                    </ul>
+                </nav>
+
                     <br><br>
                     <img src="img/header.gif"><img src="img/header.gif"><img src="img/header.gif">
                 </td>
@@ -101,7 +104,6 @@
                         <a href="https://epicsusgames.com"><img src="http://gamma-world.eu/epicsus_button.gif" alt="EpicSusGames"></a>
                         <a href="http://web-rasbur.42web.io" target="_blank"><img src="img/webrasbur.gif" alt="Web-Rasbur"></a>
                         <a href="http://mayner-net.42web.io"><img src="img/mnetad.png" alt="mayner-net"></a>
-                        <a href="http://simakov.42web.io"><img src="img/simka.png" alt="mayner-net"></a>
                         <a href="http://yarik21yt.serv00.net" target="_blank"><img src="http://yarik21yt.serv00.net/assets/splash_btn.png" alt="YARIK21YT-SITE"></a>
                         <a href="http://sobka228.github.io/" title="Новости, Блог, Проекты, Приколюхи, ПОБЕГ ОТ СОБКЕ. Заходи к нам!" alt="Новости, Блог, Проекты, Приколюхи, ПОБЕГ ОТ СОБКЕ. Заходи к нам!"><img src="http://sobka228.github.io/logo.gif" width="88" height="31" border="0"> </a>
                         <a href="http://netquake.io/quake"><img src="img/quake.gif" alt="QUAKE now! (WASM required)"></a>
