@@ -21,7 +21,7 @@
 <html>
 <head>
 	<?php include '../include/html/head.php'; ?>
-    <title>Вход</title>
+    <title>Login</title>
 </head>
 <body>
 	<?php include '../include/html/header.php'; ?>
@@ -29,15 +29,15 @@
 		<div class="main">
 			<form action="login.php" method="POST">
 				<p>
-					<p>Логин:</p>
+					<p>Login:</p>
 					<input type="email" name="username">
 				</p>
 				<p>
-					<p>Пароль:</p>
+					<p>Password:</p>
 					<input type="password" name="password">
 				</p>
 				<p>
-					<button type="submit" name="do_login">Войти</button>
+					<button type="submit" name="do_login">Login</button>
 				</p>
 			</form>
 			<p><?php echo($error); ?></p>

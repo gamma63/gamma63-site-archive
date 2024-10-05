@@ -65,31 +65,31 @@
 			<div class="main">
 				<form action="register.php" method="POST">
 					<p>
-						<p>Ваш ник:</p>
+						<p>Nickname:</p>
 						<input type="text" name="username" maxlength="50" value="<?php echo $_POST['username']; ?>">
 					</p>
 					<p>
-						<p>Ваша электронная почта:</p>
+						<p>Email:</p>
 						<input type="email" name="email" value="<?php echo $_POST['email']; ?>">
 					</p>
 					<p>
-						<p>Ваш пароль:</p>
+						<p>Password:</p>
 						<input type="password" name="pass" maxlength="20" value="<?php echo $_POST['pass']; ?>">
 					</p>
 					<p>
-						<p>Повторите ваш пароль:</p>
+						<p>Repeat your password:</p>
 						<input type="password" name="pass2">
 					</p>
 					<p>
-						<p>Описание вашего аккаунта:</p>
+						<p>Description of your account:</p>
 						<textarea name="descr"></textarea>
 					</p>
 					<p>
-						<button type="submit" name="do_signup">Зарегестрироваться</button>
+						<button type="submit" name="do_signup">Register</button>
 					</p>
 				</form>
 				<p><?php echo($text); ?></p><br>
-				<p>При регистрации прочитайте <a href="<?php echo($url); ?>/web/terms.php">пользовательское соглашение</a> <?php echo($sitename); ?></p>
+				<p>After registration read <a href="<?php echo($url); ?>/web/terms.php">the TOU</a> <?php echo($sitename); ?></p>
 			</div>
 		</div>
 		<?php include "../include/html/footer.php" ?>

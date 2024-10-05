@@ -178,6 +178,10 @@ body {
 	text-decoration: none;
 }
 
+input {
+    text-align: center;
+}
+
 .block .user {
 	color: rgb(255, 255, 255);
 	text-decoration: none;
@@ -252,4 +256,8 @@ body {
 
 .footer .links .link {
 	margin: 8px;
+}
+
+p {
+    text-align: center;
 }
