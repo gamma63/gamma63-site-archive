@@ -54,7 +54,7 @@
     $lang_no = "Not allowed";
     
     $lang_publish = "Publish";
-    $lang_attach = "Attacg";
+    $lang_attach = "Attach";
     $lang_image = "Picture:";
     $lang_pinned = "Pinned";
     $lang_date = "d M Y at H:i";
