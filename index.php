@@ -77,10 +77,10 @@
                         <li><a href="?z=gid/web/register.php"><img src="img/register.gif" alt="register"></a></li>
                         <li><a href="?z=gid/web/login.php"><img src="img/login.gif" alt="login"></a></li>
                         <li><a href="?z=gid/web/search.php"><img src="img/users.gif" alt="User List"></a></li>
-                        <li><a href="?z=gid/web/logout.php"><img src="img/logout.gif" alt="Logout"></a></li>
                         <li><a href="?z=gid/web/feed.php"><img src="img/feed.gif" alt="Feed"></a></li>
                         <li><a id="musicToggle" onclick="toggleMusic()"><img src="img/mutus.gif"></a></li>
                         <li><a href="?z=contents/other.php"><img src="img/other.png" alt="other"></a></li>
+                        <li><a href="?z=gid/web/logout.php"><img src="img/logout.gif" alt="Logout"></a></li>
                     </ul>
                 </nav>
                 <br><br>

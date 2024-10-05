@@ -6,6 +6,13 @@
     $ban = mysqli_query($db, 'SELECT * FROM banlist');
 ?>
 
+<style>
+    * {
+        color: white;
+    }
+</style>
+
+
 <a href="index.php">Назад</a> | 
 <a href="add.php?type=ban">Добавить</a><br><br>
 <table border="1" width="100%">

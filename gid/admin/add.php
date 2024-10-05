@@ -18,6 +18,13 @@
     }
 ?>
 
+<style>
+    * {
+        color: white;
+    }
+</style>
+
+
 <form action="add.php?type=ban" method="post">
     <a href="banlist.php">Назад</a><br><br>
     <table border="1" width="100%">

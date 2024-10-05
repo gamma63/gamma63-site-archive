@@ -6,6 +6,13 @@
     $users = mysqli_query($db, 'SELECT * FROM users');
 ?>
 
+<style>
+    * {
+        color: white;
+    }
+</style>
+
+
 <a href="index.php">Назад</a><br><br>
 <table border="1" width="100%">
     <thead>

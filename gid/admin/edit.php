@@ -51,6 +51,13 @@
     }
 ?>
 
+<style>
+    * {
+        color: white;
+    }
+</style>
+
+
 <?php if($_GET['type'] == 'user'): ?>
     <a href="users.php">Назад</a><br><br>
     <form action="edit.php?type=user&id=<?php echo((int)$_GET['id']); ?>" method="post">

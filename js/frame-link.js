@@ -35,24 +35,12 @@ window.addEventListener("popstate", function (e) {
 });
 
 //Checks to see if a page parameter exists and sets the mainframe src to that page.
-async function setMainFrame() {
+function setMainFrame() {
     let params = new URLSearchParams(window.location.search);
     let page = params.get(pageParam);
     if (page != null) {
         page = page.replace("javascript:", ""); // Security to stop url scripts
-        
-        mainFrame.src = "hidden/loading.php";
-
-        mainFrame.onload = function() {
-            if (mainFrame.src !== "hidden/loading.php") {
-                return;
-            }
-            mainFrame.src = page;
-        };
-
-        setTimeout(() => {
-            mainFrame.src = page;
-        }, 3500);
+        mainFrame.src = page;
     }
 }
 

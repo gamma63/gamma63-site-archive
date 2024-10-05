@@ -33,6 +33,13 @@
     }
 ?>
 
+<style>
+    * {
+        color: white;
+    }
+</style>
+
+
 <form action="" method="post">
     <b>Вы точно хотите подтвердить действие?</b><br><br>
     <input type="hidden" name="delete" value="1">

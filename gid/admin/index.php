@@ -1,9 +1,14 @@
-<!-- Admin panel is not supported yet, because of issues in the code -->
 <?php 
     require_once '../include/config.php';
 
     include 'checkuser.php';
 ?>
+
+<style>
+    * {
+        color: white;
+    }
+</style>
 
 <h1><?php echo($sitename); ?> Admin panel</h1>
 <a href="../">Домой</a> | 
