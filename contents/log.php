@@ -9,6 +9,7 @@
 </style>
 
 <center>
+                    <p>10/05/2024: Account update</p>
                     <p>09/20/2024: Fourth generation of the website</p>
                     <p>09/?/2024:  Gammapedia was closed</p>
                     <p>08/31/2024: Third generation of the website</p>                

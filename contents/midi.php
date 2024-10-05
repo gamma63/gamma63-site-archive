@@ -29,4 +29,16 @@
 <p>Piano Song</p>
 <a href="../midi/Piano%20Song.mid"><p>Download</p></a>
 <br><br>
+<img src="../img/midi.png" width="128" height="128">
+<p>flourish</p>
+<a href="../midi/flourish.mid"><p>Download</p></a>
+<br><br>
+<img src="../img/midi.png" width="128" height="128">
+<p>onestop</p>
+<a href="../midi/onestop.mid"><p>Download</p></a>
+<br><br>
+<img src="../img/midi.png" width="128" height="128">
+<p>town</p>
+<a href="../midi/town.mid"><p>Download</p></a>
+<br><br>
 </center>
