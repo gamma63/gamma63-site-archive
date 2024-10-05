@@ -1,0 +1,19 @@
+{
+    "id":"gw",
+    "version":"1.0.0",
+    "enable":"1",
+    "metadata":
+    {
+        "author":"gamma63",
+        "Russian":
+        {
+            "name":"Gamma World",
+            "descr":"тема Gamma World"
+        },
+        "English":
+        {
+            "name":"Gamma World",
+            "descr":"Gamma World theme"
+        }
+    }
+}

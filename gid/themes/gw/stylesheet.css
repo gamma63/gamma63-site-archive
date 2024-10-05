@@ -1,0 +1,255 @@
+body {
+	color: white;
+	background-image: url('../../../img/bg.gif');
+	margin: 0;
+}
+
+@media screen and (max-width: 510px){
+	.header {
+		padding-bottom: 80px;
+	}
+}
+
+.main_app {
+	margin: 0 auto;
+	max-width: 580px;
+}
+
+.main {
+	background-image: url('../../../img/bg.gif');
+    padding: 16px;
+	border-radius: 0px 0px 4px 4px;
+}
+
+.main .info {
+	padding: 8px;
+	padding-top: 32px;
+}
+
+.changeuser {
+	text-align: right;
+}
+
+.changeuser a {
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+
+.file {
+	font-size: 16px;
+	display: block;
+	height: auto !important;
+	background: none !important;
+	box-shadow: none !important;
+	padding: 0px !important;
+}
+
+.file::file-selector-button {
+	font-size: 16px;
+	height: 32px;
+	border: none;
+	height: auto !important;
+	padding: 16px;
+	border-radius: 4px;
+	margin: 8px;
+	margin-right: 16px;
+}
+
+
+.main select {
+	color: rgb(255, 255, 255);
+	font-size: 16px;
+	width: 100%;
+	display: block;
+	height: 32px;
+	border: none;
+	padding: 4px;
+	padding-left: 16px;
+	padding-right: 16px;
+	border-radius: 4px;
+	margin-bottom: 16px;
+}
+
+.main .user {
+	width: 100%;
+}
+
+.main .img100{
+	width: 100px;
+}
+
+.main .user .info {
+	padding-left: 8px;
+	padding-top: 16px;
+}
+.main a {
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+
+.main .img {
+	width: 100%;
+}
+
+.head {
+	display: block;
+	background: #6A1B9A;
+	padding: 16px;
+	margin: 0px;
+	margin-top: 8px;
+	border-radius: 4px 4px 0px 0px;
+	text-align: center;
+	color: white;
+}
+
+/* Для постов */
+
+.wall {
+	text-align: left;
+}
+
+.wall .error {
+	text-align: center;
+	padding: 16px;
+}
+
+.posting {
+	display: block;
+	border-radius: 0px 0px 4px 4px;
+}
+
+.posting .postarea {
+	display: block;
+	font-size: 16px;
+	border: none;
+	resize: none;
+	padding: 16px;
+	width: 100%;
+	height: 200px;
+}
+
+.posting .do_post {
+	display: block;
+	font-size: 16px;
+	width: 100%;
+	padding: 16px;
+	border: none;
+	border-radius: 0px 0px 4px 4px;
+}
+
+.posting .detail{
+	padding: 16px;
+}
+
+.posting .detail a {
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+
+.posting .detail #menu{
+	display: none;
+}
+
+.posting .detail #menu input{
+	width: 100%;
+}
+
+.block {
+	display: block;
+	margin: 8px;
+	margin-bottom: 0px;
+	padding: 16px;
+	border-radius: 4px 4px 0px 0px;
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+
+.opencom {
+	display: block;
+	margin: 8px;
+	margin-top: 0px;
+	padding: 16px;
+	border-radius: 0px 0px 4px 4px;
+	color: rgb(255, 255, 255);
+}
+
+.opencom a {
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+
+.block .user {
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+
+.block .buttons {
+	float: right;
+}
+
+.block .buttons a {
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+
+.block #selected a {
+	color: #6A1B9A;
+	text-decoration: none;
+}
+
+.block .date {
+	color: darkgray;
+}
+
+.user a {
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+
+.block .img {
+	margin-top: 8px;
+	width: 100%;
+}
+
+.pages{
+	height: 72px;
+}
+
+.back {
+	width: 30%;
+	display: block;
+	float: left;
+	margin: 8px;
+	padding: 16px;
+	border-radius: 4px;
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+
+.next {
+	width: 30%;
+	display: block;
+	float: right;
+	margin: 8px;
+	padding: 16px;
+	border-radius: 4px;
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+
+.footer{
+	display: block;
+	text-align: center;
+    padding: 16px;
+	margin-top: 32px;
+	border-radius: 4px;
+}
+
+.footer a {
+	color: #6A1B9A;
+	text-decoration: none;
+}
+
+.footer .links .link {
+	margin: 8px;
+}

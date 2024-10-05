@@ -6,7 +6,7 @@
     $url = 'https://' .$_SERVER['HTTP_HOST'] . '/gid';
     $sitename = 'Gamma World';
     $favicon = '/favicon.ico';
-    $style = 'md1';
+    $style = 'gw';
     $lang = 'en.php';
     $enable_antispam = true;
     $antispam = 60;
