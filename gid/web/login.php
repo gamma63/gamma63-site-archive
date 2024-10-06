@@ -27,7 +27,7 @@
 	<?php include '../include/html/header.php'; ?>
 	<div class="main_app">
 		<div class="main">
-		<center>
+			<center>
 			<form action="login.php" method="POST">
 				<p>Email:</p>
 				<input type="email" name="username">
