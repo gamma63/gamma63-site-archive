@@ -75,9 +75,7 @@
 					<input type="password" name="pass2">
 					<p>Description of your account:</p>
 					<textarea name="descr"></textarea>
-					<p>
-						<button type="submit" name="do_signup">Register</button>
-					</p>
+					<button type="submit" name="do_signup">Register</button>
 				</form>
 				<p><?php echo($text); ?></p><br>
 				<p>After registration read <a href="<?php echo($url); ?>/web/terms.php">the TOU</a> <?php echo($sitename); ?></p>

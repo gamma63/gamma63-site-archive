@@ -5,7 +5,7 @@
 
     $userAgent = $_SERVER['HTTP_USER_AGENT'];
 
-    if (strpos($userAgent, 'MSIE') !== false || strpos($userAgent, 'Netscape') !== false) {
+    if (strpos($userAgent, 'MSIE') == true || strpos($userAgent, 'Netscape') == true) {
         $protocol = 'http';
     } else {
         $protocol = 'https';
