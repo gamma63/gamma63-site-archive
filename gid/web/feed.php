@@ -102,7 +102,7 @@
 				</div>
 				<div class="opencom">
 					<a href="comments.php?id=<?php echo($list['id']); ?>">
-						Открыть комментарии (<?php echo(mysqli_num_rows(mysqli_query($db, 'SELECT * FROM comments WHERE post_id = ' .(int)$list['id']))); ?>)
+						Comments (<?php echo(mysqli_num_rows(mysqli_query($db, 'SELECT * FROM comments WHERE post_id = ' .(int)$list['id']))); ?>)
 					</a>
 				</div>
 			<?php endwhile; ?>

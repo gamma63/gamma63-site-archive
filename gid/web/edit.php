@@ -49,7 +49,7 @@
 			</form>
 			</center>
 			<p><?php echo($error); ?></p><br>
-			<a href="pass.php"><?php echo($lang_changepass); ?></a>
+			<center><a href="pass.php"><?php echo($lang_changepass); ?></a></center>
 		</div>
 	</div>
 	<?php include "../include/html/footer.php" ?>

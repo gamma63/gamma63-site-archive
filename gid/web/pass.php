@@ -37,23 +37,17 @@
 	<div class="main_app">
 		<div class="main">
 			<h1>After changing password you need to re-login!</h1>
+			<center>
 			<form action="pass.php" method="POST">
-				<p>
-					<p>Old password: </p>
-					<input type="password" name="oldpass">
-				</p>
-				<p>
-					<p>New password: </p>
-					<input type="password" name="pass">
-				</p>
-				<p>
-					<p>Confirm new password:</p>
-					<input type="password" name="pass2">
-				</p>
-				<p>
-					<button type="submit" name="do_change">Change password</button>
-				</p>
+				<p>Old password: </p>
+				<input type="password" name="oldpass">
+				<p>New password: </p>
+				<input type="password" name="pass">
+				<p>Confirm new password:</p>
+				<input type="password" name="pass2">
+				<button type="submit" name="do_change">Change password</button>
 			</form>
+			</center>
 			<p><?php echo($error); ?></p>
 		</div>
 	</div>
