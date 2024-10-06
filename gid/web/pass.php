@@ -10,15 +10,15 @@
 
 	if(isset($_POST['do_change'])){
 		if(!password_verify($_POST['oldpass'], $user['pass'])){
-			$error = 'Старый пароль не верный!';
+			$error = 'Old password is not valid!';
 		}
 
 		if($_POST['pass'] != $_POST['pass2']){
-			$error = '2 пароль не верный';
+			$error = 'Second password is not valid';
 		}
 
 		if(empty(trim($_POST['pass']))){
-			$error = 'Пароль пустой';
+			$error = 'Password is empty';
 		}
 		
 		if(empty($error)){
@@ -30,28 +30,28 @@
 <html>
 <head>
 	<?php include '../include/html/head.php'; ?>
-    <title>Изменение аккаунта</title>
+    <title>Edit Account</title>
 </head>
 <body>
 	<?php include '../include/html/header.php'; ?>
 	<div class="main_app">
 		<div class="main">
-			<h1>После смены пароля вы должны перезайти в аккаунт!</h1>
+			<h1>After changing password you need to re-login!</h1>
 			<form action="pass.php" method="POST">
 				<p>
-					<p>Старый Пароль: </p>
+					<p>Old password: </p>
 					<input type="password" name="oldpass">
 				</p>
 				<p>
-					<p>Новый Пароль: </p>
+					<p>New password: </p>
 					<input type="password" name="pass">
 				</p>
 				<p>
-					<p>Повторите новый пароль:</p>
+					<p>Confirm new password:</p>
 					<input type="password" name="pass2">
 				</p>
 				<p>
-					<button type="submit" name="do_change">Изменить пароль</button>
+					<button type="submit" name="do_change">Change password</button>
 				</p>
 			</form>
 			<p><?php echo($error); ?></p>

@@ -24,7 +24,7 @@
 				<tr>
 					<td><img class="img100" src="https://avatars.githubusercontent.com/u/85364286?v=4"></td>
 					<td class="info">
-						<a href="https://github.com/KovshKomeij">
+						<a href="https://github.com/dibof228">
 							<h1>dibof228</h1>
 						</a>
 					</td>
