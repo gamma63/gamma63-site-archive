@@ -63,33 +63,25 @@
 		<?php include '../include/html/header.php'; ?>
 		<div class="main_app">
 			<div class="main">
+				<center>
 				<form action="register.php" method="POST">
-					<p>
-						<p>Nickname:</p>
-						<input type="text" name="username" maxlength="50" value="<?php echo $_POST['username']; ?>">
-					</p>
-					<p>
-						<p>Email:</p>
-						<input type="email" name="email" value="<?php echo $_POST['email']; ?>">
-					</p>
-					<p>
-						<p>Password:</p>
-						<input type="password" name="pass" maxlength="20" value="<?php echo $_POST['pass']; ?>">
-					</p>
-					<p>
-						<p>Repeat your password:</p>
-						<input type="password" name="pass2">
-					</p>
-					<p>
-						<p>Description of your account:</p>
-						<textarea name="descr"></textarea>
-					</p>
+					<p>Nickname:</p>
+					<input type="text" name="username" maxlength="50" value="<?php echo $_POST['username']; ?>">
+					<p>Email:</p>
+					<input type="email" name="email" value="<?php echo $_POST['email']; ?>">
+					<p>Password:</p>
+					<input type="password" name="pass" maxlength="20" value="<?php echo $_POST['pass']; ?>">
+					<p>Repeat your password:</p>
+					<input type="password" name="pass2">
+					<p>Description of your account:</p>
+					<textarea name="descr"></textarea>
 					<p>
 						<button type="submit" name="do_signup">Register</button>
 					</p>
 				</form>
 				<p><?php echo($text); ?></p><br>
 				<p>After registration read <a href="<?php echo($url); ?>/web/terms.php">the TOU</a> <?php echo($sitename); ?></p>
+				</center>
 			</div>
 		</div>
 		<?php include "../include/html/footer.php" ?>

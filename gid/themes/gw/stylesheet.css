@@ -178,10 +178,6 @@ body {
 	text-decoration: none;
 }
 
-input {
-    margin-left: expression((document.body.offsetWidth - this.offsetWidth) / 2);
-}
-
 .block .user {
 	color: rgb(255, 255, 255);
 	text-decoration: none;

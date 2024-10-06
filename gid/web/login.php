@@ -27,19 +27,17 @@
 	<?php include '../include/html/header.php'; ?>
 	<div class="main_app">
 		<div class="main">
+		<center>
 			<form action="login.php" method="POST">
+				<p>Email:</p>
+				<input type="email" name="username">
+				<p>Password:</p>
+				<input type="password" name="password">
 				<p>
-					<p>Email:</p>
-					<input type="email" name="username">
-				</p>
-				<p>
-					<p>Password:</p>
-					<input type="password" name="password">
-				</p>
-				<p>
-					<button type="submit" name="do_login">Login</button>
+				<button type="submit" name="do_login">Login</button>
 				</p>
 			</form>
+			</center>
 			<p><?php echo($error); ?></p>
 		</div>
 	</div>

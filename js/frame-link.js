@@ -11,6 +11,7 @@ var hitCounterFunction = null;
 // Event to handle first page load - Also sets up the mainFrame
 window.onload = function() {
     mainFrame = document.getElementById("mainframe");
+    console.log("mainFrame:", mainFrame);
     if (mainFrame.attachEvent) {
         mainFrame.attachEvent("onload", updateHistory);
     } else {
@@ -26,6 +27,7 @@ window.attachEvent("onhashchange", function() {
 
 // Checks to see if a page parameter exists and sets the mainframe src to that page.
 function setMainFrame() {
+    console.log("setMainFrame called");
     var url = window.location.href;
     var params = url.split("?");
     if (params.length > 1) {
@@ -33,12 +35,14 @@ function setMainFrame() {
         if (page != null) {
             page = page.replace("javascript:", ""); // Security to stop url scripts
             mainFrame.src = page;
+            console.log("mainFrame.src:", mainFrame.src);
         }
     }
 }
 
 // Updates the browser history with the current page, causing the URL bar to update.
 function updateHistory() {
+    console.log("updateHistory called");
     var title = titlePrefix + mainFrame.contentDocument.title;
 
     // Stops the page getting into an infinate loop reloading itself.

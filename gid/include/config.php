@@ -3,7 +3,15 @@
 
     session_start();
 
-    $url = 'http://' .$_SERVER['HTTP_HOST'] . '/gid';
+    $userAgent = $_SERVER['HTTP_USER_AGENT'];
+
+    if (strpos($userAgent, 'MSIE') !== false || strpos($userAgent, 'Netscape') !== false) {
+        $protocol = 'http';
+    } else {
+        $protocol = 'https';
+    }
+    
+    $url = $protocol . '://' . $_SERVER['HTTP_HOST'] . '/gid';
     $sitename = 'Gamma World';
     $favicon = '/favicon.ico';
     $style = 'gw';
