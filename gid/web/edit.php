@@ -34,26 +34,20 @@
 	<?php include '../include/html/header.php'; ?>
 	<div class="main_app">
 		<div class="main">
+			<center>
 			<form action="edit.php" method="POST">
-				<p>
-					<p><?php echo($lang_nickname); ?></p>
-					<input type="text" name="username" value="<?php echo $data['name']; ?>">
-				</p>
-				<p>
-					<p><?php echo($lang_description); ?></p>
-					<textarea name="descr"><?php echo $data['descr']; ?></textarea>
-				</p>
-				<p>
-					<p><?php echo($lang_yespost); ?></p>
-					<select name="yespost">
-						<option <?php if($data['yespost'] == 0) echo('selected'); ?> value="0"><?php echo($lang_no); ?></option>
-						<option <?php if($data['yespost'] == 1) echo('selected'); ?> value="1"><?php echo($lang_yes); ?></option>
-					</select>
-				</p>
-				<p>
-					<button type="submit" name="do_change"><?php echo($lang_change); ?></button>
-				</p>
+				<p><?php echo($lang_nickname); ?></p>
+				<input type="text" name="username" value="<?php echo $data['name']; ?>">
+				<p><?php echo($lang_description); ?></p>
+				<textarea name="descr"><?php echo $data['descr']; ?></textarea>
+				<p><?php echo($lang_yespost); ?></p>
+				<select name="yespost">
+					<option <?php if($data['yespost'] == 0) echo('selected'); ?> value="0"><?php echo($lang_no); ?></option>
+					<option <?php if($data['yespost'] == 1) echo('selected'); ?> value="1"><?php echo($lang_yes); ?></option>
+				</select>
+				<button type="submit" name="do_change"><?php echo($lang_change); ?></button>
 			</form>
+			</center>
 			<p><?php echo($error); ?></p><br>
 			<a href="pass.php"><?php echo($lang_changepass); ?></a>
 		</div>
