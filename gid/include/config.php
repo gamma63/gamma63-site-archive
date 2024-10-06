@@ -3,7 +3,7 @@
 
     session_start();
 
-    $url = 'https://' .$_SERVER['HTTP_HOST'] . '/gid';
+    $url = 'http://' .$_SERVER['HTTP_HOST'] . '/gid';
     $sitename = 'Gamma World';
     $favicon = '/favicon.ico';
     $style = 'gw';
@@ -13,7 +13,7 @@
     $links = array(
         'Github' => 'https://github.com/gamma63/gamma63-site-archive',
         'VepurOVK' => 'https://vepurovk.xyz/gw',
-        'Forum' => 'https://gamma-world.eu/bitbybyte-forum'
+        'Forum' => 'http://gamma-world.eu/bitbybyte-forum'
     );
 
     // Выполнение конфига

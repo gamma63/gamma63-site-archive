@@ -6,9 +6,18 @@
     h1, h2, h3, h4, p, a {
         color: white;
     }
+    <?php
+    $browser = $_SERVER['HTTP_USER_AGENT'];
+    if (strpos($browser, 'MSIE') !== false) {
+        echo '    h1, h2, h3, h4, p, a {
+        color: black;
+    }';
+    }
+    ?>
 </style>
 
 <center>
+                    <p>10/06/2024: Bringed back IE support</p>
                     <p>10/05/2024: Account update</p>
                     <p>09/20/2024: Fourth generation of the website</p>
                     <p>09/?/2024:  Gammapedia was closed</p>

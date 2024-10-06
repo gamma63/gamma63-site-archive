@@ -67,17 +67,23 @@
                         <li><a href="?z=contents/index.php"><img src="img/home.gif" alt="home"></a></li>
                         <li><a href="contents/feed.rss"><img src="img/news.gif" alt="rss"></a></li>
                         <li><a href="?z=contents/log.php"><img src="img/devlog.gif" alt="devlog"></a></li>
-                        <li><a href="?z=contents/archive.php"><img src="img/archive.gif" alt="archive"></a></li>
-                        <li><a href="?z=contents/games.php"><img src="img/games.gif" alt="games"></a></li>
+                        <li><a href="?z=contents/archive.php"><img src="img/archive.gif" alt="official* software"></a></li>
+                        <li><a href="?z=contents/games.php"><img src="img/games.gif" alt="official* games"></a></li>
                         <li><a href="?z=contents/contacts.php"><img src="img/contact.gif" alt="contacts"></a></li>
                         <li><a href="?z=contents/movies.php"><img src="img/movies.png" alt="movies"></a></li>
                         <li><a href="?z=contents/tutorials.php"><img src="img/tutorial.gif" alt="tutorials"></a></li>
-                        <li><a href="?z=contents/midi.php"><img src="img/music.png" alt="music"></a></li>
-                        <li><a href="https://gamma-world.eu/bitbybyte-forum"><img src="img/forum.gif" alt="forum"></a></li>
+                        <li><a href="?z=contents/midi.php"><img src="img/music.png" alt="official* music"></a></li>
+                        <li><a href="bitbybyte-forum/index.php"><img src="img/forum.gif" alt="forum"></a></li>
                         <li><a href="?z=gid/web/register.php"><img src="img/register.gif" alt="register"></a></li>
                         <li><a href="?z=gid/web/login.php"><img src="img/login.gif" alt="login"></a></li>
                         <li><a href="?z=gid/web/search.php"><img src="img/users.gif" alt="User List"></a></li>
                         <li><a href="?z=gid/web/feed.php"><img src="img/feed.gif" alt="Feed"></a></li>
+                        <!--
+                        <li><a href="?z=gid/web/games.php"><img src="img/feed.gif" alt="games"></a></li>
+                        <li><a href="?z=gid/web/java_games.php"><img src="img/feed.gif" alt="java games"></a></li>
+                        <li><a href="?z=gid/web/music.php"><img src="img/feed.gif" alt="music"></a></li>
+                        <li><a href="?z=gid/web/flash.php"><img src="img/feed.gif" alt="flash"></a></li>
+                        -->
                         <li><a id="musicToggle" onclick="toggleMusic()"><img src="img/mutus.gif"></a></li>
                         <li><a href="?z=contents/other.php"><img src="img/other.png" alt="other"></a></li>
                         <li><a href="?z=gid/web/logout.php"><img src="img/logout.gif" alt="Logout"></a></li>
@@ -99,7 +105,7 @@
                         <a href="http://site.w10.site" title="говносайт" target="_blank"><img src="http://site.w10.site/banner.png" alt="говносайт" border="0"></a>
                         <a href="http://ftod.w10.site"><img src="http://ftod.w10.site/pic/ftod.png" width="88" height="31" border="0"></a>
                         <a href="https://gifypet.neocities.org" target="_blank">
-                            <img src="https://gifypet.neocities.org/images/badge.gif">
+                            <img src="img/gifypet.gif">
                         </a>
                         <a href="http://mak.w10.site" title="Персональный сайт Maksy" target="_blank"><img src="http://mak.w10.site/button.gif" alt="Maksy's PWS" border="0"></a>
                         <a href="http://www.old-web.com"><img src="http://www.old-web.com/images/banners/button.gif" width="88" height="31" border="0"></a>
@@ -115,7 +121,7 @@
                         <a href="http://www.theoldnet.com/#frombadge" title="Are you tired of this new Internet yet? Time to Get TheOldNet!">
                         <img src="http://theoldnet.com/images/theoldnetanimblur2.gif" width="88" height="31" border=0>
                         <a href="http://home.saursvepur.xyz"><img src="http://home.saursvepur.xyz/img/saursvepur.gif" border="0" alt="Сайт Вепура."></a>
-                        <a href="https://who.w0.am"><img src="https://who.w0.am/sex/ban.png" width="88px" height="31px" alt="Who?!"></a>
+                        <a href="http://who.w0.am"><img src="https://who.w0.am/sex/ban.png" width="88px" height="31px" alt="Who?!"></a>
                         <a href="https://myslivets.com" target="_blank"><img src="img/myslivets.png" alt="Myslivets"></a>
                         <a href="http://kernel.org"><img src="img/linux_powered.gif" alt="Linux Powered"></a>
                         <img src="img/anybrowser.gif" alt="Any Browser">

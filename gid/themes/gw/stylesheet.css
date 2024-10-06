@@ -179,7 +179,7 @@ body {
 }
 
 input {
-    text-align: center;
+    margin-left: expression((document.body.offsetWidth - this.offsetWidth) / 2);
 }
 
 .block .user {
