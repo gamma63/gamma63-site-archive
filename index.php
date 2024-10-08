@@ -64,25 +64,24 @@
                 <td id="navbar" style="padding: 5px; border-bottom: none;">
                 <nav id="navbar">
                     <ul><br>
-                        <li><a href="?z=contents/index.php"><img src="img/home.gif" alt="home"></a></li>
-                        <li><a href="contents/feed.rss"><img src="img/news.gif" alt="rss"></a></li>
-                        <li><a href="?z=contents/log.php"><img src="img/devlog.gif" alt="devlog"></a></li>
-                        <li><a href="?z=contents/archive.php"><img src="img/archive.gif" alt="official* software"></a></li>
-                        <li><a href="?z=contents/games.php"><img src="img/games.gif" alt="official* games"></a></li>
-                        <li><a href="?z=contents/contacts.php"><img src="img/contact.gif" alt="contacts"></a></li>
-                        <li><a href="?z=contents/movies.php"><img src="img/movies.png" alt="movies"></a></li>
-                        <li><a href="?z=contents/tutorials.php"><img src="img/tutorial.gif" alt="tutorials"></a></li>
-                        <li><a href="?z=contents/midi.php"><img src="img/music.png" alt="official* music"></a></li>
-                        <li><a href="bitbybyte-forum/index.php"><img src="img/forum.gif" alt="forum"></a></li>
-                        <li><a href="?z=gid/web/register.php"><img src="img/register.gif" alt="register"></a></li>
-                        <li><a href="?z=gid/web/login.php"><img src="img/login.gif" alt="login"></a></li>
-                        <li><a href="?z=gid/web/search.php"><img src="img/users.gif" alt="User List"></a></li>
-                        <li><a href="?z=gid/web/feed.php"><img src="img/feed.gif" alt="Feed"></a></li>
+                        <li><a href="?z=contents/index.php" onclick="playSound(event)"><img src="img/home.gif" alt="home"></a></li>
+                        <li><a href="contents/feed.rss" onclick="playSound(event)"><img src="img/news.gif" alt="rss"></a></li>
+                        <li><a href="?z=contents/log.php" onclick="playSound(event)"><img src="img/devlog.gif" alt="devlog"></a></li>
+                        <li><a href="?z=contents/archive.php" onclick="playSound(event)"><img src="img/archive.gif" alt="official* software"></a></li>
+                        <li><a href="?z=contents/games.php" onclick="playSound(event)"><img src="img/games.gif" alt="official* games"></a></li>
+                        <li><a href="?z=contents/contacts.php" onclick="playSound(event)"><img src="img/contact.gif" alt="contacts"></a></li>
+                        <li><a href="?z=contents/movies.php" onclick="playSound(event)"><img src="img/movies.png" alt="movies"></a></li>
+                        <li><a href="?z=contents/tutorials.php" onclick="playSound(event)"><img src="img/tutorial.gif" alt="tutorials"></a></li>
+                        <li><a href="?z=contents/midi.php" onclick="playSound(event)"><img src="img/music.png" alt="official* music"></a></li>
+                        <li><a href="bitbybyte-forum/index.php" onclick="playSound(event)"><img src="img/forum.gif" alt="forum"></a></li>
+                        <li><a href="?z=gid/web/register.php" onclick="playSound(event)"><img src="img/register.gif" alt="register"></a></li>
+                        <li><a href="?z=gid/web/login.php" onclick="playSound(event)"><img src="img/login.gif" alt="login"></a></li>
+                        <li><a href="?z=gid/web/search.php" onclick="playSound(event)"><img src="img/users.gif" alt="User List"></a></li>
+                        <li><a href="?z=gid/web/feed.php" onclick="playSound(event)"><img src="img/feed.gif" alt="Feed"></a></li>
+                        <!--li><a href="?z=gid/web/games.php" onclick="playSound(event)"><img src="img/games.png" alt="user's flash games"></a></li-->
                         <!--
-                        <li><a href="?z=gid/web/games.php"><img src="img/feed.gif" alt="games"></a></li>
-                        <li><a href="?z=gid/web/java_games.php"><img src="img/feed.gif" alt="java games"></a></li>
-                        <li><a href="?z=gid/web/music.php"><img src="img/feed.gif" alt="music"></a></li>
-                        <li><a href="?z=gid/web/flash.php"><img src="img/feed.gif" alt="flash"></a></li>
+                        <li><a href="?z=gid/web/java_games.php" onclick="playSound(event)"><img src="img/feed.gif" alt="java games"></a></li>
+                        <li><a href="?z=gid/web/music.php" onclick="playSound(event)"><img src="img/feed.gif" alt="music"></a></li>
                         -->
                         <li><a id="musicToggle" onclick="toggleMusic()"><img src="img/mutus.gif"></a></li>
                         <li><a href="?z=contents/other.php"><img src="img/other.png" alt="other"></a></li>
@@ -97,10 +96,12 @@
             <tr>
                 <td>
                     <iframe id="mainframe" src="contents/index.php"></iframe>
+                    <embed id="clickSound" src="snd/click.mp3" hidden="true" autostart="false" loop="false" />
                     <footer id="footer">
                         &copy; 2024 Gamma World, tested in mypal<br>
                         <br>
                         <!-- banner images -->
+                        <a href="http://semka.w10.site"><img src="img/semka.png"></a>
                         <a href="http://oldicq.ru"><img src="img/kicq.gif" alt="KICQ"></a>
                         <a href="http://site.w10.site" title="говносайт" target="_blank"><img src="http://site.w10.site/banner.png" alt="говносайт" border="0"></a>
                         <a href="http://ftod.w10.site"><img src="http://ftod.w10.site/pic/ftod.png" width="88" height="31" border="0"></a>
@@ -124,16 +125,19 @@
                         <a href="http://who.w0.am"><img src="https://who.w0.am/sex/ban.png" width="88px" height="31px" alt="Who?!"></a>
                         <a href="https://myslivets.com" target="_blank"><img src="img/myslivets.png" alt="Myslivets"></a>
                         <a href="http://kernel.org"><img src="img/linux_powered.gif" alt="Linux Powered"></a>
-                        <img src="img/anybrowser.gif" alt="Any Browser">
+                        <a href="http://winworldpc.com/product/internet-explorer/ie-5"><img src="img/ie5.gif" alt="at least IE 5.0"></a>
                         <img src="img/bestview.gif" alt="Best viewed with open eyes">
                         <a href="http://neocities.org"><img src="img/gc.gif" alt="Neocities"></a>
                         <a href="http://www.glennmcc.org/"><img src="img/arachne.gif" alt="Arachne, DOS Browser"></a>
                         <a href="http://nfixz.w10.site"><img src="http://nfixz.w10.site/banners/nfixz.gif" width=88 height=31></a>
                         <a href="http://homepage.w10.site"><img src="https://homepage.w10.site/img/banner.png" width="88" height="31" border="0" /></a>
                         <a href="http://nostalgy.net.ru"><img src="img/nnetru.gif" alt="nostalgy net ru"></a>
+                        </p>
                         <p>
                         <a href="http://pirogprod.w10.site"><img src="http://pirogprod.w10.site/ico/pirogprodlogo.png" width="88" height="31" border="0"></a>
-                        </p>
+                        <a href="https://melonking.net"><img src="img/MELONKING.GIF"></a>
+                        <img src="img/phonechump.gif">
+                        <a href="http://ruffle.rs"><img src="img/flash.gif"></a>
                         </p>
                     </footer>
                 </td>
