@@ -21,5 +21,5 @@
     <p>VepurOVK Group: https://vepurovk.xyz/gw</p>
     <p>Mastodon: https://indieweb.social/@gamma63</p>
     <p>Email: webe-not-inc@proton.me</p>
-    <p>KICQ: 5591645</p>
+    <p>KICQ: 2884835</p>
 </center>

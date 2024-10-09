@@ -12,6 +12,10 @@
         #rightSidebar { float: right; margin-top: 50px; }
         .box { border: 1px solid; padding: 10px; }
 
+        #click-sound {
+            display: none;
+        }
+
         table td {
             text-align: center; /* Center text horizontally */
         }
@@ -53,6 +57,11 @@
             }
             musicPlaying = !musicPlaying;
         }
+
+        function playSound() {
+            var sound = document.getElementById('click-sound');
+            sound.play();
+        }
     </script>
 </head>
 
@@ -60,28 +69,27 @@
     <div align="center"><center>
         <table cellpadding="0" cellspacing="0">
             <tr>
-                <img src="img/13-538102387.gif">
+                <marquee>10/09/2024: Added click sound</marquee>
                 <td id="navbar" style="padding: 5px; border-bottom: none;">
                 <nav id="navbar">
                     <ul><br>
-                        <li><a href="?z=contents/index.php" onclick="playSound(event)"><img src="img/home.gif" alt="home"></a></li>
-                        <li><a href="contents/feed.rss" onclick="playSound(event)"><img src="img/news.gif" alt="rss"></a></li>
-                        <li><a href="?z=contents/log.php" onclick="playSound(event)"><img src="img/devlog.gif" alt="devlog"></a></li>
-                        <li><a href="?z=contents/archive.php" onclick="playSound(event)"><img src="img/archive.gif" alt="official* software"></a></li>
-                        <li><a href="?z=contents/games.php" onclick="playSound(event)"><img src="img/games.gif" alt="official* games"></a></li>
-                        <li><a href="?z=contents/contacts.php" onclick="playSound(event)"><img src="img/contact.gif" alt="contacts"></a></li>
-                        <li><a href="?z=contents/movies.php" onclick="playSound(event)"><img src="img/movies.png" alt="movies"></a></li>
-                        <li><a href="?z=contents/tutorials.php" onclick="playSound(event)"><img src="img/tutorial.gif" alt="tutorials"></a></li>
-                        <li><a href="?z=contents/midi.php" onclick="playSound(event)"><img src="img/music.png" alt="official* music"></a></li>
-                        <li><a href="bitbybyte-forum/index.php" onclick="playSound(event)"><img src="img/forum.gif" alt="forum"></a></li>
-                        <li><a href="?z=gid/web/register.php" onclick="playSound(event)"><img src="img/register.gif" alt="register"></a></li>
-                        <li><a href="?z=gid/web/login.php" onclick="playSound(event)"><img src="img/login.gif" alt="login"></a></li>
-                        <li><a href="?z=gid/web/search.php" onclick="playSound(event)"><img src="img/users.gif" alt="User List"></a></li>
-                        <li><a href="?z=gid/web/feed.php" onclick="playSound(event)"><img src="img/feed.gif" alt="Feed"></a></li>
-                        <!--li><a href="?z=gid/web/games.php" onclick="playSound(event)"><img src="img/games.png" alt="user's flash games"></a></li-->
+                        <li><a href="?z=contents/index.php" onclick="playSound();"><img src="img/home.gif" alt="home"></a></li>
+                        <li><a href="contents/feed.rss" onclick="playSound();"><img src="img/news.gif" alt="rss"></a></li>
+                        <li><a href="?z=contents/archive.php" onclick="playSound();"><img src="img/archive.gif" alt="official* software"></a></li>
+                        <li><a href="?z=contents/games.php" onclick="playSound();"><img src="img/games.gif" alt="official* games"></a></li>
+                        <li><a href="?z=contents/contacts.php" onclick="playSound();"><img src="img/contact.gif" alt="contacts"></a></li>
+                        <li><a href="?z=contents/movies.php" onclick="playSound();"><img src="img/movies.png" alt="movies"></a></li>
+                        <li><a href="?z=contents/tutorials.php" onclick="playSound();"><img src="img/tutorial.gif" alt="tutorials"></a></li>
+                        <li><a href="?z=contents/midi.php" onclick="playSound();"><img src="img/music.png" alt="official* music"></a></li>
+                        <li><a href="bitbybyte-forum/index.php" onclick="playSound();"><img src="img/forum.gif" alt="forum"></a></li>
+                        <li><a href="?z=gid/web/register.php" onclick="playSound();"><img src="img/register.gif" alt="register"></a></li>
+                        <li><a href="?z=gid/web/login.php" onclick="playSound();"><img src="img/login.gif" alt="login"></a></li>
+                        <li><a href="?z=gid/web/search.php" onclick="playSound();"><img src="img/users.gif" alt="User List"></a></li>
+                        <li><a href="?z=gid/web/feed.php" onclick="playSound();"><img src="img/feed.gif" alt="Feed"></a></li>
+                        <!--li><a href="?z=gid/web/games.php" onclick="playSound();"><img src="img/games.png" alt="user's flash games"></a></li-->
                         <!--
-                        <li><a href="?z=gid/web/java_games.php" onclick="playSound(event)"><img src="img/feed.gif" alt="java games"></a></li>
-                        <li><a href="?z=gid/web/music.php" onclick="playSound(event)"><img src="img/feed.gif" alt="music"></a></li>
+                        <li><a href="?z=gid/web/java_games.php" onclick="playSound();"><img src="img/feed.gif" alt="java games"></a></li>
+                        <li><a href="?z=gid/web/music.php" onclick="playSound();"><img src="img/feed.gif" alt="music"></a></li>
                         -->
                         <li><a id="musicToggle" onclick="toggleMusic()"><img src="img/mutus.gif"></a></li>
                         <li><a href="?z=contents/other.php"><img src="img/other.png" alt="other"></a></li>
@@ -96,7 +104,7 @@
             <tr>
                 <td>
                     <iframe id="mainframe" src="contents/index.php"></iframe>
-                    <embed id="clickSound" src="snd/click.mp3" hidden="true" autostart="false" loop="false" />
+                    <embed id="click-sound" src="snd/click.mp3" hidden="true" autostart="false" loop="false" />
                     <footer id="footer">
                         &copy; 2024 Gamma World, tested in mypal<br>
                         <br>
