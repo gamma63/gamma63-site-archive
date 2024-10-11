@@ -210,7 +210,7 @@
 		<a href="http://sobka228.github.io" title="Новости, Блог, Проекты, Приколюхи, ПОБЕГ ОТ СОБКЕ. Заходи к нам!" alt="Новости, Блог, Проекты, Приколюхи, ПОБЕГ ОТ СОБКЕ. Заходи к нам!"><img src="img/sobka.gif" width="88" height="31" border="0"> </a>
 		<a href="http://netquake.io/quake"><img src="img/quake.gif" alt="QUAKE now! (WASM required)"></a>
 		<p>
-		<a href="http://abrbus.ru"><img src="http://abrbus.ru/banner.gif" width="88" height="31" border="0" /></a>
+		<a href="http://abrbus.ru"><img src="img/banner.gif" width="88" height="31" border="0" /></a>
 		<a href="http://www.theoldnet.com/#frombadge" title="Are you tired of this new Internet yet? Time to Get TheOldNet!">
 		<img src="http://theoldnet.com/images/theoldnetanimblur2.gif" width="88" height="31" border=0>
 		<a href="http://home.saursvepur.xyz"><img src="http://home.saursvepur.xyz/img/saursvepur.gif" border="0" alt="Сайт Вепура."></a>
