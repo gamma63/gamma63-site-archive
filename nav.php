@@ -172,6 +172,9 @@
 		<li>
 			<a target="main" href="gid/web/search.php" onclick="playSound();"><img class="twist" src="img/users.gif">User List</a>
 		</li>
+				<li>
+			<a target="main" href="gid/web/feed.php" onclick="playSound();"><img class="twist" src="img/feed.gif">Feed</a>
+		</li>
 		<li>
 			<a target="main" href="gallery/index.html" onclick="playSound();"><img class="twist" src="img/gallery.gif">Gallery</a>
 		</li>
