@@ -34,14 +34,14 @@
             <h2><?php echo($lang_authors2); ?></h2>
 
             <?php $allUsers = mysqli_query($db, 'SELECT id, name, priv, img200 FROM users WHERE priv > 1'); ?>
-				
+
 			<?php while($list = mysqli_fetch_assoc($allUsers)): ?>
 				<table class="user">
 					<tr>
 						<?php if($list['img200'] != NULL): ?>
 							<td><img class="img100" src="<?php echo($list['img200']); ?>"></td>
 						<?php else: ?>
-							<td><img class="img100" src="../imgs/blankimg.jpg"></td>
+							<td><img class="img100" src="../imgs/usr.gif"></td>
 						<?php endif; ?>
 						<td class="info">
 							<a href="user.php?id=<?php echo($list['id']); ?>">

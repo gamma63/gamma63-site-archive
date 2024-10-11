@@ -38,6 +38,15 @@ CREATE TABLE `post` (
   `date` int(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+CREATE TABLE `games` (
+  `id` int(16) NOT NULL,
+  `user_id` int(16) NOT NULL,
+  `id_who` int(16) NOT NULL,
+  `post` varchar(512) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `game_file` varchar(256) DEFAULT NULL,
+  `date` int(64) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 CREATE TABLE `users` (
   `id` int(16) NOT NULL,
   `email` varchar(128) NOT NULL,
@@ -57,6 +66,12 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `email`, `name`, `pass`, `ip`, `descr`, `ban`, `yespost`, `priv`, `img50`, `img100`, `img200`, `img`) VALUES
 (1, 'admin@admin.org', 'Admin', '$2y$10$wqy6H/8Yy1CV1OrZcE22nOdMLXDet2I2O37mwgHoSO83Fv976ZgD6', '0', '', 0, '0', 3, '', '', '', '');
 
+
+ALTER TABLE `games`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `games`
+  MODIFY `id` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 ALTER TABLE `banlist`
   ADD PRIMARY KEY (`id`);

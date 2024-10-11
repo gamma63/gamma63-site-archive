@@ -19,11 +19,11 @@
 				<input type="text" placeholder="<?php echo($lang_search); ?>" value="<?php echo($_GET['q']) ?>" name="q">
 			</form>
 
-			<?php 
+			<?php
 				if(isset($_GET['q'])){
-					$allUsers = mysqli_query($db, 'SELECT id, name, priv, img200 FROM users WHERE name LIKE "%' .mysqli_real_escape_string($db, $_GET['q']). '%" ORDER BY id DESC'); 
+					$allUsers = mysqli_query($db, 'SELECT id, name, priv, img200 FROM users WHERE name LIKE "%' .mysqli_real_escape_string($db, $_GET['q']). '%" ORDER BY id DESC');
 				} else {
-					$allUsers = mysqli_query($db, 'SELECT id, name, priv, img200 FROM users ORDER BY id DESC'); 
+					$allUsers = mysqli_query($db, 'SELECT id, name, priv, img200 FROM users ORDER BY id DESC');
 				}
 			?>
 
@@ -35,7 +35,7 @@
 						<?php if($list['img200'] != NULL): ?>
 							<td><img class="img100" src="<?php echo($list['img200']); ?>"></td>
 						<?php else: ?>
-							<td><img class="img100" src="../imgs/blankimg.jpg"></td>
+							<td><img class="img100" src="../imgs/usr.gif"></td>
 						<?php endif; ?>
 						<td class="info">
 							<a href="user.php?id=<?php echo($list['id']); ?>">
@@ -43,7 +43,7 @@
 									<?php
 										echo(strip_tags($list['name']).' ');
 
-										if ($list['priv'] >= 1){ 
+										if ($list['priv'] >= 1){
 											echo('<img src="../imgs/verif.gif">');
 										}
 									?>

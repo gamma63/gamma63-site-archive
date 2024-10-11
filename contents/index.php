@@ -6,12 +6,30 @@
     h1, h2, h3, h4, p, a {
         color: white;
     }
+	
+	table td {
+		text-align: center; /* Center text horizontally */
+	}
+
+	body {
+		color: white;
+	}
+
+	a {
+		color: white;
+	}
     <?php
     $browser = $_SERVER['HTTP_USER_AGENT'];
     if (strpos($browser, 'MSIE') !== false) {
         echo '    h1, h2, h3, h4, p, a {
         color: black;
-    }';
+    } 	body {
+		color: black;
+	}
+
+	a {
+		color: black;
+	}';
     }
     ?>
 </style>
@@ -21,7 +39,7 @@
 <p>We are surprised how you found this website :-)</p>
 <p>Explore stuff here :D</p>
 <p>Also if you can/want please add our button to your site :3</p>
-<a href="https://gamma-world.eu/vid/vihorkov.mp4"><img src="../img/VIHORKOV.jpg" width="4" height="4"></a>
+<a href="http://gamma-world.eu/vid/vihorkov.mp4"><img src="../img/VIHORKOV.jpg" width="4" height="4"></a>
 <img src="../img/gammaworld.png">
 <textarea>
 <a href="http://gamma-world.eu"><img src="http://gamma-world.eu/img/gammaworld.png" alt="Gamma World"></a>

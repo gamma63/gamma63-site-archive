@@ -20,7 +20,7 @@
 				<div class="changeuser">
 					<?php if($all['priv'] == 3): ?>
 						<a href="../admin"><?php echo($lang_admin); ?></a>
-						| 
+						|
 					<?php endif; ?>
 					<a href="upload.php"><?php echo($lang_change_avatar); ?></a>
 					 | 
@@ -34,12 +34,12 @@
 							<img class="img100" src="<?php echo($data['img200']); ?>">
 						</td>
 					<?php else: ?>
-						<td><img class="img100" src="../imgs/blankimg.jpg"></td>
+						<td><img class="img100" src="../imgs/usr.gif"></td>
 					<?php endif; ?>
 					<td class="info">
 						<h1>
-							<?php 
-								echo(strip_tags($data['name']).' '); 
+							<?php
+								echo(strip_tags($data['name']).' ');
 
 								if($data['priv'] >= 1){
 									echo('<img src="../imgs/verif.gif">');
@@ -73,11 +73,11 @@
 						<p class="error"><?php echo($_SESSION['error']); ?></p>
 						<?php unset($_SESSION['error']) ?>
 					<?php endif; ?>
-				</form> 
+				</form>
 			<?php endif; ?>
-			
+
 			<?php $data = mysqli_query($db, 'SELECT * FROM post WHERE id_user = ' .(int)$_GET['id']. ' ORDER BY pin DESC, date DESC LIMIT 10 OFFSET ' .(int)$_GET['p'] * 10); ?>
-			
+
 			<?php while($list = mysqli_fetch_assoc($data)): ?>
 
 				<?php $likes = mysqli_num_rows(mysqli_query($db, 'SELECT * FROM likes WHERE post_id = ' .$list['id'])); ?>
@@ -85,7 +85,7 @@
 				<div class="block" id="post<?php echo($list['id']); ?>">
 
 					<?php $user = mysqli_fetch_assoc(mysqli_query($db, 'SELECT name FROM users WHERE id = ' .$list['id_user'])); ?>
-					
+
 					<b>
 						<a class="user" href="user.php?id=<?php echo($list['id_user']); ?>">
 							<?php echo($user['name']); ?>
@@ -120,7 +120,7 @@
 						</a>
 					</b>
 
-					<?php 
+					<?php
 						if($list['img'] != NULL){
 							echo('<img class="img" src="' .$list['img']. '">');
 						}
