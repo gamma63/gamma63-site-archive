@@ -10,12 +10,8 @@
 		#click-sound {
             display: none;
         }
-	</style>
-</head>
-
-	<link href="common.css" rel="stylesheet" type="text/css" media="all">
-	<style>
-		body {
+		
+				body {
 			/* Cool dark blue! #000020 */
 			background-color: #000014;
 			/* background-image: linear-gradient(#1a2964, #00051e); */
@@ -115,6 +111,7 @@
 			margin-bottom: 35px;
 		}
 	</style>
+	<link href="common.css" rel="stylesheet" type="text/css" media="all">
 	<script>
 		let musicPlaying = true;
 		const audio = new Audio('snd/music.webm');
@@ -138,6 +135,8 @@
 		}
 	</script>
 </head>
+
+
 <body>
 	<div id="dungeon"></div>
 	<audio id="click-sound" src="snd/click.mp3"></audio>
