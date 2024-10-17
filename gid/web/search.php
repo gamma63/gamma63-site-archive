@@ -1,62 +1,42 @@
 <?php
-	require_once "../include/config.php";
+    require_once '../include/config.php';
+    include '../include/web/user.php';
 
-	if(empty($_SESSION['user'])){
-		header("Location: login.php");
-	}
+    include "../api/search.php";
+
+    $text = '';
+    $search = new search();
+
+    $data = $search->get($_GET['q'], $_GET['p']);
 ?>
 
-<html>
+<html lang="en">
 <head>
-	<?php include '../include/html/head.php'; ?>
-    <title><?php echo($lang_search); ?></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamma ID</title>
+    <link rel="stylesheet" href="css.css">
+    <script src="js.js"></script>
 </head>
 <body>
-	<?php include '../include/html/header.php'; ?>
-	<div class="main_app">
-		<div class="main">
-			<form action="search.php" method="get">
-				<input type="text" placeholder="<?php echo($lang_search); ?>" value="<?php echo($_GET['q']) ?>" name="q">
-			</form>
-
-			<?php
-				if(isset($_GET['q'])){
-					$allUsers = mysqli_query($db, 'SELECT id, name, priv, img200 FROM users WHERE name LIKE "%' .mysqli_real_escape_string($db, $_GET['q']). '%" ORDER BY id DESC');
-				} else {
-					$allUsers = mysqli_query($db, 'SELECT id, name, priv, img200 FROM users ORDER BY id DESC');
-				}
-			?>
-
-			<p><?php echo($lang_find . mysqli_num_rows($allUsers) . $lang_find_users); ?></p>
-
-			<?php while($list = mysqli_fetch_assoc($allUsers)): ?>
-				<table class="user">
-					<tr>
-						<?php if($list['img200'] != NULL): ?>
-							<td><img class="img100" src="<?php echo($list['img200']); ?>"></td>
-						<?php else: ?>
-							<td><img class="img100" src="../imgs/usr.gif"></td>
-						<?php endif; ?>
-						<td class="info">
-							<a href="user.php?id=<?php echo($list['id']); ?>">
-								<h1>
-									<?php
-										echo(strip_tags($list['name']).' ');
-
-										if ($list['priv'] >= 1){
-											echo('<img src="../imgs/verif.gif">');
-										}
-									?>
-								</h1>
-							</a>
-						</td>
-					</tr>
-				</table>
-			<?php endwhile; ?>
-		</div>
-	</div>
-	<?php include "../include/html/footer.php" ?>
+	<center>
+    <div class="page">
+    <?php $i = 0; foreach($data as $list): ?>
+        <?php 
+            echo('<a href="user.php?id=' .$list['id']. '"><img src="'); 
+            
+            if(isset($list['img100'])) { 
+                echo($list['img100']); 
+            } else { 
+                echo('../imgs/usr.gif'); 
+            } 
+            
+            echo('" width="100px" style="float: left; margin-right: 8px;">') 
+        ?>
+        <?php echo('<h1>' .htmlspecialchars($list['username']). '</h1></a>') ?><br><br><br>
+    <?php $i++; endforeach; ?>
+    </div><br>
+	</center>
+    <?php include '../include/web/footer.php'; ?>  
 </body>
 </html>
-
-<?php mysqli_close($db);

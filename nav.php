@@ -163,7 +163,7 @@
 			<a target="main" href="bitbybyte-forum/index.php" onclick="playSound();"><img class="twist" src="img/forum.gif">Forum</a>
 		</li>
 		<li>
-			<a target="main" href="gid/web/register.php" onclick="playSound();"><img class="twist" src="img/register.gif">Register</a>
+			<a target="main" href="gid/web/reg.php" onclick="playSound();"><img class="twist" src="img/register.gif">Register</a>
 		</li>
 		<li>
 			<a target="main" href="gid/web/login.php" onclick="playSound();"><img class="twist" src="img/login.gif">Login</a>
@@ -171,8 +171,11 @@
 		<li>
 			<a target="main" href="gid/web/search.php" onclick="playSound();"><img class="twist" src="img/users.gif">User List</a>
 		</li>
-				<li>
+		<li>
 			<a target="main" href="gid/web/feed.php" onclick="playSound();"><img class="twist" src="img/feed.gif">Feed</a>
+		</li>
+		<li>
+			<a target="main" href="gid/web/settings.php" onclick="playSound();"><img class="twist" src="img/settings.gif">Settings</a>
 		</li>
 		<li>
 			<a target="main" href="gallery/index.html" onclick="playSound();"><img class="twist" src="img/gallery.gif">Gallery</a>

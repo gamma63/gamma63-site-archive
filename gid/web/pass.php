@@ -1,20 +1,17 @@
 <?php
-	require_once "../include/config.php";
+    require_once '../include/config.php';
+    include '../include/web/user.php';
 
-	if(empty($_SESSION['user'])){
-		header("Location: login.php");
-	}
-
-	$change = "UPDATE users SET pass = '" .password_hash($_POST['pass'], PASSWORD_DEFAULT). "' WHERE id = '" .$_SESSION['user']['user_id']. "'";
-	$user = mysqli_fetch_assoc(mysqli_query($db, 'SELECT pass FROM users where id = ' .(int)$_SESSION['user']['user_id']));
+    $change = "UPDATE users SET pass = '" .password_hash($_POST['pass'], PASSWORD_DEFAULT). "' WHERE id = '" .$_SESSION['user']['user_id']. "'";
+	$user = $db->query('SELECT pass FROM users where id = ' .(int)$_SESSION['user']['user_id'])->fetch();
 
 	if(isset($_POST['do_change'])){
 		if(!password_verify($_POST['oldpass'], $user['pass'])){
-			$error = 'Old password is not valid!';
+			$error = 'Old password is incorrect!';
 		}
 
 		if($_POST['pass'] != $_POST['pass2']){
-			$error = 'Second password is not valid';
+			$error = 'Second password is incorrect';
 		}
 
 		if(empty(trim($_POST['pass']))){
@@ -22,36 +19,40 @@
 		}
 		
 		if(empty($error)){
-			mysqli_query($db, $change);
-			header("Location: logout.php");
+			$db->query($change);
+			header("Location: index.php");
 		}
 	}
 ?>
-<html>
+
+<html lang="en">
 <head>
-	<?php include '../include/html/head.php'; ?>
-    <title>Edit Account</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamma ID</title>
+    <link rel="stylesheet" href="css.css">
+    <script src="js.js"></script>
 </head>
 <body>
-	<?php include '../include/html/header.php'; ?>
-	<div class="main_app">
-		<div class="main">
-			<h1>After changing password you need to re-login!</h1>
-			<center>
-			<form action="pass.php" method="POST">
-				<p>Old password: </p>
-				<input type="password" name="oldpass">
-				<p>New password: </p>
-				<input type="password" name="pass">
-				<p>Confirm new password:</p>
-				<input type="password" name="pass2">
-				<button type="submit" name="do_change">Change password</button>
-			</form>
-			</center>
-			<p><?php echo($error); ?></p>
-		</div>
-	</div>
-	<?php include "../include/html/footer.php" ?>
+    <div class="page">
+        <form method="post">
+        <p>
+			<p>Old password: </p>
+			<input type="password" name="oldpass">
+		</p>
+		<p>
+			<p>New password: </p>
+			<input type="password" name="pass">
+		</p>
+		<p>
+			<p>Confirm new password:</p>
+			<input type="password" name="pass2">
+		</p>
+		<p>
+			<button type="submit" name="do_change">Change password</button>
+		</p>
+        </form>
+    </div><br>
+	<?php include '../include/web/footer.php'; ?>  
 </body>
 </html>
-<?php mysqli_close($db);

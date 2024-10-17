@@ -1,14 +1,18 @@
 <?php 
     ini_set('display_errors', false); // Скрываем рукожопость автора
 
-    require_once "config.php";
+    require_once "../include/config.php";
+
+    use Otp\Otp;
+    use Otp\GoogleAuthenticator;
+    use ParagonIE\ConstantTime\Encoding;
 
     class account{
-        function login($email, $pass){
+        function login($email, $pass, $code){
             global $db;
             $response = array();
             
-            $query = $db->query("SELECT token, pass, id, ban FROM users WHERE email = " .$db->quote($email));
+            $query = $db->query("SELECT token, pass, id, ban, secret FROM users WHERE email = " .$db->quote($email));
             $info = $query->fetch();
 
             // Ты точно есть?
@@ -26,6 +30,22 @@
             if($info['ban'] == 1){
                 $db->query("UPDATE users SET token='' WHERE email=" .$db->quote($_REQUEST['email']));
                 $response = array('error' => 'Your account has been banned');
+            }
+
+            if($info['secret'] != NULL){
+                require_once "../vendor/autoload.php";
+
+                $otp = new Otp();
+
+                if($code == NULL){
+                    $code = '1';
+                }
+
+                if($otp->checkTotp(Encoding::base32DecodeUpper($info['secret']), $code)) {
+                    
+                } else{
+                    $response = array('error' => 'Bad 2fa code');
+                }
             }
 
             // Проходи
@@ -60,11 +80,12 @@
             $response = array();
             
             $get_user_token = $db->query("SELECT * FROM users WHERE token = " .$db->quote($token));
+            $user_data = $get_user_token->fetch();
 
             if(!empty(trim($token)) or $token != null){
-                if($get_user_token->fetch()['ban'] == 1){
+                if($user_data['ban'] == 1){
                     $db->query("UPDATE users SET token='' WHERE token=" .$db->quote($token));
-                    header("Refresh: 0");
+                    $get_user_token = $db->query("SELECT * FROM users WHERE token = " .$db->quote($token));
                 }
 
                 if($get_user_token->rowCount() == 0){
@@ -75,8 +96,16 @@
                     );
                 } else {
                     $response = array(
-                        'account_login' => 1
+                        'account_login' => 1,
+                        'username' => $user_data['name']
                     );
+
+                    // Проверка 2fa
+                    if($user_data['secret'] != NULL){
+                        $response['2fa'] = 1;
+                    } else{
+                        $response['2fa'] = 0;
+                    }
                 }
             } else{
                 $response = array(
@@ -95,7 +124,7 @@
 
         switch($_REQUEST['method']){
             case 'login':
-                echo json_encode($account->login($_REQUEST['email'], $_REQUEST['pass']));
+                echo json_encode($account->login($_REQUEST['email'], $_REQUEST['pass'], $_REQUEST['code']));
                 break;
             case 'check':
                 echo json_encode($account->check($_REQUEST['token']));

@@ -10,8 +10,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `banlist` (
   `id` int(16) NOT NULL,
-  `user_id` int(16) NOT NULL COMMENT 'ID пользователя',
-  `reason` text DEFAULT NULL COMMENT 'Причина бана'
+  `user_id` int(16) NOT NULL COMMENT 'User ID',
+  `reason` text DEFAULT NULL COMMENT 'Ban reason'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE `comments` (
@@ -36,16 +36,7 @@ CREATE TABLE `post` (
   `img` varchar(256) DEFAULT NULL,
   `pin` int(1) NOT NULL DEFAULT 0,
   `date` int(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
-CREATE TABLE `games` (
-  `id` int(16) NOT NULL,
-  `user_id` int(16) NOT NULL,
-  `id_who` int(16) NOT NULL,
-  `post` varchar(512) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `game_file` varchar(256) DEFAULT NULL,
-  `date` int(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE `users` (
   `id` int(16) NOT NULL,
@@ -60,18 +51,14 @@ CREATE TABLE `users` (
   `img50` varchar(255) DEFAULT NULL,
   `img100` varchar(255) DEFAULT NULL,
   `img200` varchar(255) DEFAULT NULL,
-  `img` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `img` varchar(255) DEFAULT NULL,
+  `token` varchar(64) DEFAULT NULL,
+  `secret` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 INSERT INTO `users` (`id`, `email`, `name`, `pass`, `ip`, `descr`, `ban`, `yespost`, `priv`, `img50`, `img100`, `img200`, `img`) VALUES
 (1, 'admin@admin.org', 'Admin', '$2y$10$wqy6H/8Yy1CV1OrZcE22nOdMLXDet2I2O37mwgHoSO83Fv976ZgD6', '0', '', 0, '0', 3, '', '', '', '');
 
-
-ALTER TABLE `games`
-  ADD PRIMARY KEY (`id`);
-
-ALTER TABLE `games`
-  MODIFY `id` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 ALTER TABLE `banlist`
   ADD PRIMARY KEY (`id`);

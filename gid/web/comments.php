@@ -1,125 +1,131 @@
 <?php
-	require_once "../include/config.php";
+    require_once '../include/config.php';
+    include '../include/web/user.php';
 
-	$all = mysqli_fetch_assoc(mysqli_query($db, 'SELECT * FROM users WHERE id = ' .(int)$_SESSION['user']['user_id']));
+    include "../api/user.php";
+    include "../api/comments.php";
 
-	if(empty($_SESSION['user'])){
-		header("Location: login.php");
-	}
+    $text = '';
+    $user = new user();
+    $wall = new comments();
+
+    // Выкладывание поста
+
+    if(isset($_POST['do_post'])){
+        $result = $wall->add($_SESSION['user']['token'], $_POST['text'], $_GET['id']);
+        if(isset($result['error'])){
+            $text = $result['error'];
+        }
+    }
+
+    // Удаление поста
+
+    if(isset($_GET['del'])){
+        $result = $wall->delete($_SESSION['user']['token'], $_GET['del']);
+        if(isset($result['error'])){
+            $text = $result['error'];
+        }
+        header("Location: comments.php?id={$_GET['id']}");
+        exit();
+    }
+    
+    $data_wall = $wall->get($_SESSION['user']['token'], $_GET['id'], $_GET['p']);
+
+    // Проверка на существование комментах
+
+    if($data_wall['post']['id_from'] == 0){
+        header("Location: index.php");
+    } else {
+        // Узнавание о пользователях из комментов
+        
+        $user_ids = '';
+        $i = 0;
+
+        foreach($data_wall['comments'] as $data){
+            $user_ids = $user_ids . (string)$data['user_id'] . ',';
+            $i++;
+        }
+
+        $user_ids = $user->getuser($user_ids);
+        $user_post = $user->getuser($data_wall['post']['user_id']. ',' .$data_wall['post']['id_from']);
+    }
 ?>
 
-<html>
+<html lang="en">
 <head>
-	<?php include '../include/html/head.php'; ?>
-    <title><?php echo($lang_wall_head); ?></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamma ID</title>
+    <link rel="stylesheet" href="css.css">
+    <script src="js.js"></script>
 </head>
 <body>
-	<?php include '../include/html/header.php'; ?>
-		<div class="main_app">
-		<div class="wall">	
-			<?php 
-				$list =	mysqli_fetch_assoc(mysqli_query($db, 'SELECT * FROM post WHERE id = ' .(int)$_GET['id'])); 
-				$likes = mysqli_num_rows(mysqli_query($db, 'SELECT * FROM likes WHERE post_id = ' .(int)$_GET['id'])); 
-			?>
+	<center>
+    <div class="page">
+    <?php 
+            echo('<img style="float: left; margin-right: 8px;" src="'); 
+            
+            if(isset($user_post[0]['img50'])) { 
+                echo($user_post[0]['img50']); 
+            } else { 
+                echo('../imgs/usr.gif'); 
+            } 
+            
+            echo('" width="50px">'); 
+        ?>
 
-			<div class="block" id="post<?php echo($list['id']); ?>">
+        <?php echo("<b>" .htmlspecialchars($user_post[1]['username']). "</b>") ?>
 
-				<?php $user = mysqli_fetch_assoc(mysqli_query($db, 'SELECT name FROM users WHERE id = ' .$list['id_user'])); ?>
-				
-				<b>
-					<a class="user" href="user.php?id=<?php echo($list['id_user']); ?>">
-						<?php echo($user['name']); ?>
-					</a>
-				</b><br>
+        <?php echo("<span>" .date('d M Y в H:i', $data_wall['post']['date']). "</span>") ?><br>
 
-				<span class="date">
-					<?php echo(date($lang_date, $list['date'])); ?>
-				</span><br>
+        <?php echo('<b>От: <a href="user.php?id=' .$user_post[0]['id']. '">' .htmlspecialchars($user_post[0]['username']). '</a></b>') ?>
 
-				<?php $user = mysqli_fetch_assoc(mysqli_query($db, 'SELECT name FROM users WHERE id = ' .$list['id_who'])); ?>
-				<b><?php echo($lang_byname); ?>
-					<a class="user" href="user.php?id=<?php echo($list['id_who']); ?>">
-						<?php echo($user['name']); ?>
-					</a>
-				</b>
+        <?php if(isset($data_wall['post']['image'])) echo('<img width="100%" src="' .$data_wall['post']['image']. '">') ?>
 
-				<?php 
-					if($list['img'] != NULL){
-						echo('<img class="img" src="' .$list['img']. '">');
-					}
-				?>
+        <?php echo("<p>" .htmlspecialchars($data_wall['post']['text']). "</p>") ?>
 
-				<p><?php echo(preg_replace('/(https?:\/\/\S+)/', '<a href="$1">$1</a>', strip_tags($list['post']))); ?></p>
+        <hr>
+        <h1 align="center">Comments</h1>
+        <hr>
 
-				<div class="buttons">
-					<a class="like">
-						<img src="../imgs/like.gif" alt="like ">
-						<span class="likecount"><?php echo($likes); ?></span>
-					</a>
-				</div><br>
-			</div>
-			<div class="opencom"></div>
+        <form action="" method="post" enctype="multipart/form-data">
+            <textarea name="text" style="width: 100%;"></textarea>
+            <button type="submit" name="do_post">Publish</button><br>
+        </form><hr>
 
-			<h1 class="head">Комментарии</h1>
-			<form action="../methods/addcomment.php" method="post" class="posting" enctype="multipart/form-data">
-				<input type="hidden" name="access_token" value="<?php echo($_SESSION['user']['access_token']); ?>">
-				<input type="hidden" name="post_id" value="<?php echo((int)$_GET['id']); ?>">
-				<textarea name="text" class="postarea" minlength="3"></textarea>
-				<button type="submit" name="do_post" class="do_post"><?php echo($lang_publish); ?></button>
-				<?php if(isset($_SESSION['error'])): ?>
-					<p class="error"><?php echo($_SESSION['error']); ?></p>
-					<?php unset($_SESSION['error']) ?>
-				<?php endif; ?>
-			</form> 
+        <?php echo('<p>' .$text. '</p>') ?>
 
-			<?php $data = mysqli_query($db, 'SELECT * FROM comments WHERE post_id = ' .(int)$_GET['id']. ' ORDER BY date DESC LIMIT 10 OFFSET ' .(int)$_GET['p'] * 10); ?>
-			
-			<?php while($list = mysqli_fetch_assoc($data)): ?>
-				<?php $likes = mysqli_num_rows(mysqli_query($db, 'SELECT * FROM likes WHERE post_id = ' .$list['id'])); ?>
+        <?php $i = 0; foreach($data_wall['comments'] as $data): ?>
+            <div>
+                <?php 
+                    echo('<img style="float: left; margin-right: 8px;" src="'); 
+                    
+                    if(isset($user_ids[$i]['img50'])) { 
+                        echo($user_ids[$i]['img50']); 
+                    } else { 
+                        echo('../imgs/blankimg.jpg'); 
+                    } 
+                    
+                    echo('" width="50px">'); 
+                ?>
 
-				<div class="block">
+                <?php echo('<b><a href="user.php?id=' .$user_ids[$i]['id']. '">' .htmlspecialchars($user_ids[$i]['username']). '</a></b>') ?>
 
-					<?php $user = mysqli_fetch_assoc(mysqli_query($db, 'SELECT name FROM users WHERE id = ' .$list['user_id'])); ?>
-					
-					<b>
-						<a class="user" href="user.php?id=<?php echo($list['user_id']); ?>">
-							<?php echo($user['name']); ?>
-						</a>
-					</b>
+                <?php if($user_ids[$i]['id'] == $_SESSION['user']['user_id'] or $_SESSION['user']['priv'] >= 2): ?>
+                    <div style="float: right;">
+                        <?php echo('<a href="?id=' .$_GET['id']. '&del=' .$data['id']. '"><img src="../imgs/del.gif"></a>') ?>
+                    </div>
+                <?php endif; ?><br>
 
-					<?php if($list['user_id'] == $_SESSION['user']['user_id'] or $all['priv'] >= 2): ?>
-						<div class="buttons">
-							<a href="../methods/delcomm.php?id=<?php echo($list['id']); ?>">
-								<img src="../imgs/del.gif" alt="delete ">
-							</a>
-						</div>
-					<?php endif; ?><br>
+                <?php echo("<span>" .date('d M Y в H:i', $data['date']). "</span>") ?><br>
+                
+                <?php if(isset($data['image'])) echo('<img src="' .$data['image']. '">') ?>
 
-					<span class="date">
-						<?php echo(date($lang_date, $list['date'])); ?>
-					</span><br>
-
-					<p><?php echo(preg_replace('/(https?:\/\/\S+)/', '<a href="$1">$1</a>', strip_tags($list['text']))); ?></p>
-				</div>
-				<div class="opencom"></div>
-			<?php endwhile; ?>
-
-			<?php if(mysqli_num_rows($data) == 0): ?>
-				<h1 class="error">Комментарий нет</h1>
-			<?php endif; ?>
-
-			<div class="pages">
-				<?php if((int)$_GET['p'] >= 1): ?>
-					<a class="back" href="?id=<?php echo((int)$_GET['id']); ?>&p=<?php echo((int)$_GET['p'] - 1); ?>"><?php echo($lang_previous); ?></a>
-				<?php endif; ?>
-				<?php if(mysqli_num_rows($data) == 10): ?>
-					<a class="next" href="?id=<?php echo((int)$_GET['id']); ?>&p=<?php echo((int)$_GET['p'] + 1); ?>"><?php echo($lang_next); ?></a>
-				<?php endif; ?>
-			</div>
-		</div>
-	</div>
-	<?php include "../include/html/footer.php" ?>
+                <?php echo("<p>" .htmlspecialchars($data['text']). "</p>") ?>
+            </div>
+        <?php $i++; endforeach; ?>
+    </div>
+	</center>
+    <?php include '../include/web/footer.php'; ?>  
 </body>
 </html>
-
-<?php mysqli_close($db);

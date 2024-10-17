@@ -1,47 +1,55 @@
-<?php
-	require_once "../include/config.php";
+<?php 
+    require_once '../include/config.php';
+    include "../api/account.php";
 
-	if(isset($_SESSION['user'])){
-		header("Location: $url");
-	}
+    if(isset($_SESSION['user']['token'])){
+        header("Location: user.php");
+    }
 
-	if(isset($_POST['do_login'])){
-		$data = json_decode(file_get_contents($url. '/api/login.php?username=' .urlencode($_POST['username']). '&password=' .urlencode($_POST['password'])), true);
-
-		if(empty($data['error_code'])){
-			$_SESSION['user'] = $data;
-
-			header("Location: $url");
-		} else {
-			$error = $data['error_msg'];
-		}
-	}
+    if(isset($_POST['login'])){
+        $login = new account();
+        $info = $login->login($_POST['email'], $_POST['pass'], $_POST['code']);
+        if(isset($info['error'])){
+            $text = $info['error'];
+        } elseif(isset($info['token'])){
+            $_SESSION['user'] = $info;
+            header("Location: user.php");
+        }
+    }
 ?>
-
-<html>
 <head>
-	<?php include '../include/html/head.php'; ?>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="css.css">
+    <script src="js.js"></script>
 </head>
 <body>
-	<?php include '../include/html/header.php'; ?>
-	<div class="main_app">
-		<div class="main">
-			<center>
-			<form action="login.php" method="POST">
-				<p>Email:</p>
-				<input type="email" name="username">
-				<p>Password:</p>
-				<input type="password" name="password">
-				<p>
-				<button type="submit" name="do_login">Login</button>
-				</p>
-			</form>
-			</center>
-			<p><?php echo($error); ?></p>
-		</div>
-	</div>
-	<?php include "../include/html/footer.php" ?>
+    <div class="page">
+		<center>
+        <form action="" method="post">
+            <p>
+                <p>Email:</p>
+                <input type="email" name="email">
+            </p>
+            
+            <p>
+                <p>Password:</p>
+                <input type="password" name="pass">
+            </p>
+            
+            <p>
+                <p>2FA (if turned on):</p>
+                <input type="text" name="code">
+            </p>
+
+            <p>
+                <button type="submit" name="login">Login</button>
+            </p>
+        </form><br>
+		</center>
+		<?php echo('<p>' .$text. '</p>') ?>
+    </div>
+    <?php include '../include/web/footer.php'; ?>  
 </body>
 </html>
-<?php mysqli_close($db);

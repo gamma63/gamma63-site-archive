@@ -10,35 +10,31 @@
     } else {
         $protocol = 'https';
     }
-    
+
     $url = $protocol . '://' . $_SERVER['HTTP_HOST'] . '/gid';
     $sitename = 'Gamma World';
-    $favicon = '/favicon.ico';
+    $favicon = 'favicon.png';
     $style = 'gw';
-    $lang = 'en.php';
     $enable_antispam = true;
     $antispam = 60;
     $links = array(
         'Github' => 'https://github.com/gamma63/gamma63-site-archive',
         'VepurOVK' => 'https://vepurovk.xyz/gw',
-        'Forum' => 'http://gamma-world.eu/bitbybyte-forum'
+        'Forum' => 'http://gamma-world.eu/bitbybyte-forum',
+		'OpenVK' => 'https://ovk.to/gw',
+		'Telegram' => 'https://t.me/gamma_world'
     );
 
     // Выполнение конфига
 
-    include "../lang/$lang";
-
-    $db = mysqli_connect(
-        $dbconn['server'], 
-        $dbconn['user'], 
-        $dbconn['pass'], 
-        $dbconn['db']
+    $db = new PDO("mysql:host=" .$dbconn['server']. ";dbname=" .$dbconn['db'],
+        $dbconn['user'],
+        $dbconn['pass']
     );
 
-    mysqli_set_charset($db,"utf8mb4");
+    $db->exec("set names utf8mb4");
 
     if($db == false){
-        echo('Error when connecting db');
-        echo mysqli_connect_error();
+        echo('Ошибка подключение базы данных');
     }
 ?>
