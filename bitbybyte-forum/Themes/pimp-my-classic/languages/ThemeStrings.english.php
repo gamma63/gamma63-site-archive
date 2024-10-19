@@ -9,7 +9,7 @@ $txt['unread_replies'] = 'Unread Replies';
 $txt['own_posts'] = 'Own Posts';
 $txt['recent_posts'] = 'Recent Posts';
 
-$txt['NoRemove_ThemeCopyright'] = '<span>Pimp My Classic Theme by:</span> <a href="http://www.darkvoidpoetry.com/" target="_blank" class="new_win">DVP &copy;</a>';
+$txt['NoRemove_ThemeCopyright'] = '<span>Gamma World &copy; 2024, пожалуйста прочтите <a href="http://gamma-world.eu/bitbybyte-forum/index.php?topic=217.0">правила</a>.</span>';
 
 
 ?>

@@ -8,7 +8,7 @@
    <!-- Author: your email address or contact information. The name attribute is optional. -->
    <author name="dvp & gamma63"></author>
    <!-- Website... where to get updates and more information. -->
-   <website>http://www.darkvoidpoetry.com/</website>
+   <website>http://gamma-world.eu/</website>
    <!-- Template layers to use, defaults to "main". -->
    <layers>html,body</layers>
    <!-- Templates to load on startup. Default is "index". -->
