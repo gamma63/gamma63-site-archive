@@ -114,7 +114,7 @@
 	<link href="common.css" rel="stylesheet" type="text/css" media="all">
 	<script>
 		let musicPlaying = true;
-		const audio = new Audio('snd/music.webm');
+		const audio = new Audio('snd/Scott_Holmes_-_14_-_Alien_Wasteland22.mp3');
 		audio.loop = true;
 		audio.play();
 
