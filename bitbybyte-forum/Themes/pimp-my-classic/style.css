@@ -184,6 +184,10 @@ code {
   color: black;
 }
 
+.padding .floatleft {
+  color: black;
+}
+
 .windowbg3 {
     color: #CCCCCC;
     background-color: #202020;
