@@ -35,6 +35,10 @@
 </style>
 
 <center>
+	<img src="../img/ermakovexe.png" width="128" height="128">
+    <p>ERMAKOV.EXE</p>
+    <img src="../img/newr.gif"><a href="../soft/ermakovexe.zip">Download</a><img src="../img/newl.gif">
+    <br><br>
     <img src="../img/2048.png" width="128" height="128">
     <p>2048</p>
     <a href="2048.php">Play</a>

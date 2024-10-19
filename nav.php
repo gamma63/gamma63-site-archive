@@ -148,10 +148,10 @@
 			<a target="main" href="contents/feed.rss" onclick="playSound();"><img class="twist" src="img/news.gif">RSS</a>
 		</li>
 		<li>
-			<a target="main" href="contents/archive.php" onclick="playSound();"><img class="twist" src="img/archive.gif">Admin's software archive</a>
+			<a target="main" href="contents/archive.php" onclick="playSound();"><img class="twist" src="img/archive.gif">Software</a>
 		</li>
 		<li>
-			<a target="main" href="contents/games.php" onclick="playSound();"><img class="twist" src="img/games.gif">Admin's flash games playlist</a>
+			<a target="main" href="contents/games.php" onclick="playSound();"><img class="twist" src="img/games.gif">Flash & Non Flash games</a>
 		</li>
 		<li>
 			<a target="main" href="contents/contacts.php" onclick="playSound();"><img class="twist" src="img/contact.gif">Contacts</a>
