@@ -188,6 +188,12 @@ code {
   color: black;
 }
 
+.menu-container {
+    margin-top: 90px; /* Adjust the value as needed to move the menu down */
+    text-align: center; /* Center the menu items if desired */
+}
+
+
 .windowbg3 {
     color: #CCCCCC;
     background-color: #202020;

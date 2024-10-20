@@ -44,7 +44,7 @@ function template_init()
 
 	/* The version this template/theme is for.
 		This should probably be the version of SMF it was created for. */
-	$settings['theme_version'] = '2.0 RC1';
+	$settings['theme_version'] = '2.0.19';
 
 	/* Set a setting that tells the theme that it can render the tabs. */
 	$settings['use_tabs'] = false;
@@ -140,11 +140,13 @@ function template_body_above()
 	global $context, $settings, $options, $scripturl, $txt, $modSettings;
 
 	// The logo, user information, news, and menu.
-
-	// Show the menu here, according to the menu sub template.
-	echo '
-	<p align="center">';	
+	echo '<p align="center">';
 	template_menu();
+	echo '
+    <div style="text-align: left; margin-top: -90px;">
+        <a href="/soft/ermakovexe.zip"><img src="', $settings['theme_url'], '/images/ermakovexe.gif" alt="ERMAKOV EXE" width="128" height="128" /></a>
+    </div>';
+
 	echo '
 	</p>
 	<table cellspacing="0" cellpadding="0" border="0" align="center" width="95%" class="tborder">
@@ -363,35 +365,22 @@ function theme_linktree()
 // Show the menu up top.  Something like [home] [help] [profile] [logout]...
 function template_menu()
 {
-	global $context, $settings, $options, $scripturl, $txt;
+    global $context, $settings, $options, $scripturl, $txt;
 
-	// We aren't showing all the buttons in this theme.
-	$hide_buttons = array('pm', 'mlist');
+    // We aren't showing all the buttons in this theme.
+    $hide_buttons = array('pm', 'mlist');
 
-	foreach ($context['menu_buttons'] as $act => $button)
-		if (in_array($act, $hide_buttons))
-			continue;
-		else
-			echo '
-					<a href="', $button['href'], '">', $settings['use_image_buttons'] ? '<img src="' . $settings['lang_images_url'] . '/' . $act . '.gif" alt="' . $button['title'] . '" border="0" />' : $button['title'], '</a>', !empty($button['is_last']) ? '' : $context['menu_separator'];
+    echo '<div class="menu-container">'; // Add a container for the menu
+
+    foreach ($context['menu_buttons'] as $act => $button)
+        if (in_array($act, $hide_buttons))
+            continue;
+        else
+            echo '
+                    <a href="', $button['href'], '">', $settings['use_image_buttons'] ? '<img src="' . $settings['theme_url'] . '/' . $act . '.gif" alt="' . $button['title'] . '" border="0" />' : $button['title'], '</a>', !empty($button['is_last']) ? '' : $context['menu_separator'];
+
+    echo '</div>'; // Close the container
 }
 
-// Generate a strip of buttons, out of buttons.
-function template_button_strip($button_strip, $direction = 'top', $custom_td = '')
-{
-	global $settings, $context, $txt, $scripturl;
-
-	// Create the buttons...
-	$buttons = array();
-	foreach ($button_strip as $key => $value)
-		if (!isset($value['test']) || !empty($context[$value['test']]))
-			$buttons[] = '<a href="' . $value['url'] . '"' . (isset($value['active']) ? ' class="active"' : '') . (isset($value['custom']) ? ' ' . $value['custom'] : '') . '>' . ($settings['use_image_buttons'] ? '<img src="' . $settings['images_url'] . '/' . ($value['lang'] ? $context['user']['language'] . '/' : '') . $value['image'] . '" alt="' . $txt[$value['text']] . '" border="0" />' : $txt[$value['text']]) . '</a>';
-
-	if (empty($button_strip))
-		return '';
-
-	echo '
-		<div ', $custom_td, '>', implode($context['menu_separator'], $buttons) , '</div>';
-}
 
 ?>
