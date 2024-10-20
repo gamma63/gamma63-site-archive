@@ -150,7 +150,7 @@ function template_body_above()
 	</p>
 	<table cellspacing="0" cellpadding="0" border="0" align="center" width="95%" class="tborder">
 		<tr style="background-color: #202020;">
-			<td valign="middle" align="left"><img src="', !empty($settings['header_logo_url']) ? $settings['header_logo_url'] : $settings['images_url'] . '/smflogo.gif', '" alt="" /></td>
+			<td valign="middle" align="left"><img src="', !empty($settings['header_logo_url']) ? $settings['header_logo_url'] : $settings['images_url'] . '/smflogo.gif', '" alt="" width="128" height="128" /></td>
 			<td valign="middle" colspan="2">';
 
 	// If the user is logged in, display stuff like their name, new messages, etc.
