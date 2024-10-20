@@ -244,6 +244,11 @@ code {
 .smalltext {
     font-size: 12px;
 }
+
+.chatmsg {
+	color: black;
+}
+
 .normaltext {
     font-size: 13px;
 }
