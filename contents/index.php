@@ -35,6 +35,11 @@
 </style>
 
 <center>
+<div id='linuxring'>
+<script type="text/javascript" src="http://teethinvitro.neocities.org/webring/linuxring/script/onionring-variables.js"></script>
+<script type="text/javascript" src="http://teethinvitro.neocities.org/webring/linuxring/script/onionring-widget.js"></script>
+<link rel="stylesheet" href="../onionring.css">
+</div>
 <h1>Welcome to Gamma World website!</h1>
 <p>We are surprised how you found this website :-)</p>
 <p>Explore stuff here :D</p>
