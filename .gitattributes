@@ -1,0 +1,2 @@
+soft/archive/win31ntfull.zip filter=lfs diff=lfs merge=lfs -text
+soft" filter=lfs diff=lfs merge=lfs -text

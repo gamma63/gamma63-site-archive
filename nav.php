@@ -148,16 +148,7 @@
 			<a target="main" href="contents/feed.rss" onclick="playSound();"><img class="twist" src="img/news.gif">RSS</a>
 		</li>
 		<li>
-			<a target="main" href="contents/archive.php" onclick="playSound();"><img class="twist" src="img/archive.gif">Software</a>
-		</li>
-		<li>
-			<a target="main" href="contents/games.php" onclick="playSound();"><img class="twist" src="img/games.gif">Flash & Non Flash games</a>
-		</li>
-		<li>
 			<a target="main" href="contents/contacts.php" onclick="playSound();"><img class="twist" src="img/contact.gif">Contacts</a>
-		</li>
-		<li>
-			<a target="main" href="contents/movies.php" onclick="playSound();"><img class="twist" src="img/movies.png">Movies</a>
 		</li>
 		<li>
 			<a target="main" href="bitbybyte-forum/index.php" onclick="playSound();"><img class="twist" src="img/forum.gif">Forum [RU]</a>
@@ -233,6 +224,7 @@
 		<img src="img/phonechump.gif">
 		<a target="main" href="http://ruffle.rs"><img src="img/flash.gif"></a>
 		<a target="main" href="http://moonmuni.w10.site/"><img src="http://moonmuni.w10.site/images/banner.png" border="0" alt="Сайт Муна."></a>
+		<a target="main" href="http://caxap.narod.ws/" title="." alt="."><img src="http://caxap.narod.ws/button.gif" width="88" height="31" border="0"></a>
 	</div>
 
 	<br>
