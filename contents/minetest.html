@@ -1,0 +1,188 @@
+<html><head><base href="." />
+  <style>
+  body {
+    background: #000000;
+    margin: 0;
+    font-family: "Courier New", monospace;
+    color: #00ff00;
+  }
+  
+  #container {
+    width: 800px;
+    margin: 20px auto;
+    border: 2px solid #00ff00;
+    padding: 20px;
+  }
+  
+  #title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+    animation: blink 1s infinite;
+  }
+  
+  .server-info {
+    border: 1px dashed #00ff00;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  .join-button {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #000000;
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    font-family: "Courier New", monospace;
+    cursor: pointer;
+  }
+  
+  .join-button:hover {
+    background-color: #003300;
+  }
+  
+  #ascii-art {
+    font-family: monospace;
+    white-space: pre;
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  #server-rules {
+    border: 1px solid #00ff00;
+    padding: 10px;
+    margin-top: 20px;
+  }
+  
+  marquee {
+    margin: 20px 0;
+  }
+  
+  @keyframes blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+  
+  #status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  .online {
+    background-color: #00ff00;
+    box-shadow: 0 0 5px #00ff00;
+  }
+  
+  .offline {
+    background-color: #ff0000;
+    box-shadow: 0 0 5px #ff0000;
+  }
+  </style>
+  </head>
+  <body>
+  <div id="container">
+    <h1 id="title">*** GAMMA WORLD MINETEST SERVER ***</h1>
+    
+    <marquee scrollamount="3" behavior="alternate">Warning! this is an russian minetest server, so if you speak only english prepare to see russians in the chat</marquee>
+
+    <div class="server-info">
+      <!--<div><span id="status-indicator"></span> Server Status: <span id="server-status">Checking...</span></div>
+      <div class="players-online">
+        Players Online: <span id="player-count">Checking...</span>
+      </div>-->
+      <p>Server Address: 37.114.50.109 Port 30000</p>
+    </div>
+  
+    <button class="join-button" onclick="copyIP()">COPY SERVER ADDRESS</button>
+  
+    <div id="ascii-art">
++---------------------------+
+|   GAMMA WORLD MINETEST    |
+|         SERVER            |
++---------------------------+
+    </div>
+  
+    <div id="server-rules">
+      <h2>[Union of Soviet Socialist Biomes rules]</h2>
+      <ul>
+        <li>NO GRIEFING ALLOWED!</li>
+        <li>BE NICE TO EVERYONE</li>
+        <li>RESPECT THE CITIZENS AND DUMA</li>
+      </ul>
+    </div>
+
+    <p>If you are not member of USSB and not living in the USSB City like Zajopinsk, Savannah Central or Snusodar<br>You can find a territory to create own Country with own rules.</p>
+  
+    <center>
+      <small>(c) 2024 Gamma World</small>
+    </center>
+  </div>
+
+  <script>
+  /*function checkServerStatus() {
+    fetch('37.114.50.109:30000')
+      .then(response => response.json())
+      .then(data => {
+        const statusIndicator = document.getElementById('status-indicator');
+        const statusText = document.getElementById('server-status');
+        const playerCount = document.getElementById('player-count');
+        
+        if (data.error) {
+          statusIndicator.className = 'offline';
+          statusText.textContent = 'OFFLINE';
+          playerCount.textContent = '0';
+        } else {
+          statusIndicator.className = 'online';
+          statusText.textContent = 'ONLINE';
+          playerCount.textContent = `${data.players.online} / ${data.players.max}`;
+        }
+      })
+      .catch(() => {
+        document.getElementById('status-indicator').className = 'offline';
+        document.getElementById('server-status').textContent = 'OFFLINE';
+        document.getElementById('player-count').textContent = '0';
+      });
+  }*/
+  
+  function copyIP() {
+    const el = document.createElement('textarea');
+    el.value = '37.114.50.109';
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    
+    const btn = document.querySelector('.join-button');
+    btn.textContent = 'ADDRESS COPIED!';
+    
+    setTimeout(() => {
+      btn.textContent = 'COPY SERVER ADDRESS';
+    }, 2000);
+  }
+  
+  function updateVisitorCount() {
+    document.getElementById('visitor-count').textContent = 
+      visitorCount.toString().padStart(5, '0');
+    visitorCount++;
+  }
+  
+  // Star field effect
+  for (let i = 0; i < 100; i++) {
+    const star = document.createElement('div');
+    star.style.position = 'fixed';
+    star.style.width = '1px';
+    star.style.height = '1px';
+    star.style.backgroundColor = '#00ff00';
+    star.style.left = Math.random() * 100 + '%';
+    star.style.top = Math.random() * 100 + '%';
+    document.body.appendChild(star);
+  }
+  </script>
+  
+  </body></html>
