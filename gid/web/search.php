@@ -20,6 +20,7 @@
 </head>
 <body>
 	<center>
+    <?php include '../include/web/header.php'; ?>     
     <div class="page">
     <?php $i = 0; foreach($data as $list): ?>
         <?php 

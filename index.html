@@ -1,0 +1,124 @@
+<html><head><base href="." /><style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #00ff00;
+  font-family: "Courier New", monospace;
+  padding: 20px;
+  line-height: 1.4;
+}
+
+pre {
+  white-space: pre-wrap;
+  font-family: "Courier New", monospace;
+}
+
+.prompt {
+  color: #00ff00;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background: #00ff00;
+  vertical-align: middle;
+}
+
+a {
+  color: #00ff00;
+  text-decoration: underline;
+}
+
+a:hover {
+  background: #00ff00;
+  color: #000;
+}
+
+.menu {
+  margin: 20px 0;
+  border: 1px solid #00ff00;
+  padding: 10px;
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.terminal-window {
+  border: 1px solid #00ff00;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 800px;
+}
+
+.header {
+  border-bottom: 1px solid #00ff00;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+</style></head><body>
+
+<title>Gamma World</title>
+<div class="terminal-window">
+  <div class="header">
+    <pre>
+
+	 _____                                 _    _            _     _ 
+	|  __ \                               | |  | |          | |   | |
+	| |  \/ __ _ _ __ ___  _ __ ___   __ _| |  | | ___  _ __| | __| |
+	| | __ / _` | '_ ` _ \| '_ ` _ \ / _` | |/\| |/ _ \| '__| |/ _` |
+	| |_\ \ (_| | | | | | | | | | | | (_| \  /\  / (_) | |  | | (_| |
+	 \____/\__,_|_| |_| |_|_| |_| |_|\__,_|\/  \/ \___/|_|  |_|\__,_|
+	<br>
+	<img src="img/ng.gif" alt="Happy new year!" style="width: 100%;">
+                                                   
+    </pre>
+  </div>
+
+  <div class="prompt">[visitor@gammaworld ~]$ ls -l</div>
+  <pre>
+total 1
+-rw-r--r--  1 visitor visitor  420 Jan 1 00:00 README
+  </pre>
+
+  <div class="prompt">[visitor@gammaworld ~]$ cat README</div>
+  <pre>
+Welcome to my Gamma World!
+This is an small portal about software, enjoy :-)
+
+Button code:
+<img src="img/gammaworld.png">
+<textarea><a href="http://gamma-world.eu"><img src="http://gamma-world.eu/img/gammaworld.png" alt="Gamma World"></a></textarea>
+
+Current system status:
+Kernel: HTML 4.01 Strict
+Uptime: >87 days
+Memory: 640K (should be enough for anybody)
+  </pre>
+
+  <div class="menu">
+    <div class="prompt">[visitor@gammaworld ~]$ echo $MENU</div>
+    <pre>
+1. <a href="/bitbybyte-forum">Forum</a>
+2. <a href="contents/construction.html">GICQ/Minetest</a>
+3. <a href="contents/index.html">Software archive</a>
+4. <a href="contents/feed.rss">RSS</a>
+5. <a href="/gid/web/">Gamma ID</a>
+6. <a href="contents/contacts.html">Contacts</a>
+<!--6. <a href="/contents/construction.html">Other</a-->
+    </pre>
+  </div>
+  
+
+  <div class="prompt">[visitor@gammaworld ~]$ <span class="cursor"></span></div>
+</div>
+</body></html>

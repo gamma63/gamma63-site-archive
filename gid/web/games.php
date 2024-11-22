@@ -1,4 +1,5 @@
 <?php
+/*
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -90,9 +91,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['file'])) {
 }
 
 // Fetch all games
-$games = getAllGames($db);
+$games = getAllGames($db);*/
 ?>
 
+<!--
 <html lang="en">
 <head>
     <?php include '../include/html/head.php'; ?>
@@ -109,20 +111,21 @@ $games = getAllGames($db);
         <button type="submit">Upload Game</button>
     </form>
 
-    <?php if (isset($_SESSION['error'])): ?>
-        <p class="error"><?php echo $_SESSION['error']; unset($_SESSION['error']); ?></p>
-    <?php endif; ?>
+    <?php //if (isset($_SESSION['error'])): ?>
+        <p class="error"><?php //echo $_SESSION['error']; unset($_SESSION['error']); ?></p>
+    <?php //endif; ?>
 
     <h2>Available Games</h2>
-    <?php foreach ($games as $game): ?>
+    <?php //foreach ($games as $game): ?>
         <h3>
-            <a href="game_player.php?id=<?php echo htmlspecialchars($game['id']); ?>">
-                <?php echo htmlspecialchars($game['title']); ?>
+            <a href="game_player.php?id=<?php //echo htmlspecialchars($game['id']); ?>">
+                <?php //echo htmlspecialchars($game['title']); ?>
             </a>
         </h3>
-        <p>Uploaded by User ID: <?php echo htmlspecialchars($game['user_id']); ?></p>
-        <p>Date: <?php echo date('Y-m-d H:i:s', $game['date']); ?></p>
-    <?php endforeach; ?>
+        <p>Uploaded by User ID: <?php //echo htmlspecialchars($game['user_id']); ?></p>
+        <p>Date: //<?php //echo date('Y-m-d H:i:s', $game['date']); ?></p>
+    <?php //endforeach; ?>
     </center>
 </body>
 </html>
+-->

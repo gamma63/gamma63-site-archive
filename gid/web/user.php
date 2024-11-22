@@ -94,6 +94,7 @@
 </head>
 <body>
 	<center>
+    <?php include '../include/web/header.php'; ?>     
 	<a style="color: black;" class="header_link" href="change.php">Change avatar</a>
     <div class="page">
         <?php 

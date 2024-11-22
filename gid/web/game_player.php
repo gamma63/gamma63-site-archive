@@ -1,4 +1,4 @@
-<?php
+<?php /*
 require_once "../include/config.php";
 include '../include/user.php';
 
@@ -28,24 +28,26 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 } else {
     echo "Invalid game ID.";
     exit();
-}
+} */
 ?>
 
+<!--
 <html lang="en">
 <head>
-    <?php include '../include/html/head.php'; ?>
-    <title><?php echo htmlspecialchars($post); ?></title>
+    <?php //include '../include/html/head.php'; ?>
+    <title><?php //echo htmlspecialchars($post); ?></title>
 </head>
 <body>
     <center>
-        <h1><?php echo htmlspecialchars($post); ?></h1>
-        <?php if ($swf): ?>
-            <embed src="<?php echo htmlspecialchars($swf); ?>" type="application/x-shockwave-flash" width="800" height="600">
+        <h1><?php //echo htmlspecialchars($post); ?></h1>
+        <?php //if ($swf): ?>
+            <embed src="<?php //echo htmlspecialchars($swf); ?>" type="application/x-shockwave-flash" width="800" height="600">
             <script src="../../js/ruffle.js"></script>
-        <?php endif; ?>
-        <p>Uploaded by User ID: <?php echo htmlspecialchars($id_user); ?></p>
-        <p>Date: <?php echo date('Y-m-d H:i:s', $date); ?></p>
+        <?php //endif; ?>
+        <p>Uploaded by User ID: <?php //echo htmlspecialchars($id_user); ?></p>
+        <p>Date: <?php //echo date('Y-m-d H:i:s', $date); ?></p>
         <a href="games.php">Back to Games</a>
     </center>
 </body>
 </html>
+ -->

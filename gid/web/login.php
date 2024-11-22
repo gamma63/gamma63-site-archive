@@ -25,8 +25,9 @@
     <script src="js.js"></script>
 </head>
 <body>
+    <?php include '../include/web/header.php'; ?>  
     <div class="page">
-		<center>
+		<center>  
         <form action="" method="post">
             <p>
                 <p>Email:</p>

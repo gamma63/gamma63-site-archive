@@ -82,6 +82,7 @@
 </head>
 <body>
 	<center>
+    <?php include '../include/web/header.php'; ?>     
     <div class="page">
         <form action="" method="post" enctype="multipart/form-data">
             <textarea name="text" style="width: 100%;"></textarea>
@@ -142,12 +143,12 @@
         <?php $i++; endforeach; ?>
 
         <?php 
-            if((int)$_GET['p'] >= 1){
-                echo('<a style="float: left;" href="?p=' .(int)$_GET['p'] - 1 . '">Back</a>');
+            if (isset($_GET['p']) && (int)$_GET['p'] >= 1) {
+                echo '<a style="float: left;" href="?p=' . ((int)$_GET['p'] - 1) . '">Back</a>';
             }
 
-            if(count($data_wall) >= 10){
-                echo('<a style="float: right;" href="?p=' .(int)$_GET['p'] + 1 . '">Forward</a>');
+            if (count($data_wall) >= 10) {
+                echo '<a style="float: right;" href="?p=' . ((int)$_GET['p'] + 1) . '">Forward</a>';
             }
 		?><br>
     </div><br>

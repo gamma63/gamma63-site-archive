@@ -10,6 +10,7 @@
 </head>
 <body>
 	<center>
+    <?php include '../include/web/header.php'; ?>     
     <div class="page">
         <h3>Gamma World's Terms of Use</h3>
         <p>

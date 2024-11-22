@@ -61,6 +61,7 @@
 </head>
 <body>
 	<center>
+    <?php include '../include/web/header.php'; ?>  
     <div class="page">
     <?php 
             echo('<img style="float: left; margin-right: 8px;" src="'); 

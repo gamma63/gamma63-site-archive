@@ -15,6 +15,7 @@
 </head>
 <body>
 	<center>
+    <?php include '../include/web/header.php'; ?>     
     <div class="page">
         <h1>Please register your account, or login to it.</h1>
     </div>

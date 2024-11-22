@@ -40,6 +40,7 @@
 </head>
 <body>
 	<center>
+    <?php include '../include/web/header.php'; ?>     
     <div class="page">
         <?php 
             echo '<img width="300px" src="'.(new QRCode)->render($qr . '&issuer=GID').'"><br>';

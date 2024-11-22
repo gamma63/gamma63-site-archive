@@ -23,6 +23,7 @@
 </head>
 <body>
 	<center>
+    <?php include '../include/web/header.php'; ?>     
     <div class="page">
         <form method="post">
             <p>

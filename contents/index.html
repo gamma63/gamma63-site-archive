@@ -3,52 +3,81 @@
 </head>
 
 <style>
-    h1, h2, h3, h4, p, a {
-        color: white;
-    }
-	
-	table td {
-		text-align: center; /* Center text horizontally */
-	}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-	body {
-		color: white;
-	}
+body {
+  background: #000;
+  color: #00ff00;
+  font-family: "Courier New", monospace;
+  padding: 20px;
+  line-height: 1.4;
+}
 
-	a {
-		color: white;
-	}
-    <?php
-    $browser = $_SERVER['HTTP_USER_AGENT'];
-    if (strpos($browser, 'MSIE') !== false) {
-        echo '    h1, h2, h3, h4, p, a {
-        color: black;
-    } 	body {
-		color: black;
-	}
+pre {
+  white-space: pre-wrap;
+  font-family: "Courier New", monospace;
+}
 
-	a {
-		color: black;
-	}';
-    }
-    ?>
+.prompt {
+  color: #00ff00;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background: #00ff00;
+  vertical-align: middle;
+}
+
+a {
+  color: #00ff00;
+  text-decoration: underline;
+}
+
+a:hover {
+  background: #00ff00;
+  color: #000;
+}
+
+.menu {
+  margin: 20px 0;
+  border: 1px solid #00ff00;
+  padding: 10px;
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.terminal-window {
+  border: 1px solid #00ff00;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 800px;
+}
+
+.header {
+  border-bottom: 1px solid #00ff00;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
 </style>
 
 <center>
 <div id='linuxring'>
 <script type="text/javascript" src="http://teethinvitro.neocities.org/webring/linuxring/script/onionring-variables.js"></script>
 <script type="text/javascript" src="http://teethinvitro.neocities.org/webring/linuxring/script/onionring-widget.js"></script>
-<link rel="stylesheet" href="../onionring.css">
+<link rel="stylesheet" href="/onionring.css">
 </div>
-<h1>Welcome to Gamma World website!</h1>
-<p>We are surprised how you found this website :-)</p>
-<p>Explore stuff here :D</p>
-<p>Also if you can/want please add our button to your site :3</p>
 <a href="http://gamma-world.eu/vid/vihorkov.mp4"><img src="../img/VIHORKOV.jpg" width="4" height="4"></a>
-<img src="../img/gammaworld.png">
-<textarea>
-<a href="http://gamma-world.eu"><img src="http://gamma-world.eu/img/gammaworld.png" alt="Gamma World"></a>
-</textarea>
 
 <table border="1" style="margin: auto;">
 	<h3>Software Archive</h3>

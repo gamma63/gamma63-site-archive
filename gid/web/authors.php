@@ -9,6 +9,7 @@
     <script src="js.js"></script>
 </head>
 <body>
+    <?php include '../include/web/header.php'; ?>  
     <div class="page">
         <p>Gamma ID devs</p>
 		<a href="https://github.com/gamma63">

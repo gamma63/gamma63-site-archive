@@ -34,6 +34,7 @@
     <script src="js.js"></script>
 </head>
 <body>
+	<?php include '../include/web/header.php'; ?>     
     <div class="page">
         <form method="post">
         <p>

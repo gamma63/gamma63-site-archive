@@ -22,6 +22,7 @@
 </head>
 <body>
 	<center>
+    <?php include '../include/web/header.php'; ?>  
     <div class="page">
         <form action="" method="post" enctype="multipart/form-data">
             <p>
