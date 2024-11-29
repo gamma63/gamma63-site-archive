@@ -1,129 +1,165 @@
-<html><head><base href="." />
-    <meta charset="UTF-8">
-    <style>
-    body {
-      background: #efefef;
-      margin: 0;
-      font-family: "MS Sans Serif", "Arial", sans-serif;
-      color: #000080;
-    }
-    
-    .header {
-      background-image: url('http://gamma-world.eu/img/bg.gif');
-      border-bottom: 4px solid #006699;
-      text-align: center;
-      padding: 10px;
-    }
-    
-    .logo {
-      font-size: 48px;
-      font-weight: bold;
-      color: white;
-      text-shadow: 2px 2px #000080;
-      font-family: "Impact", sans-serif;
-    }
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>Gamma World</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        /* user styles */
 
-    .nav {
-      background: #C0C0C0;
-      padding: 5px;
-      border-top: 2px solid #FFFFFF;
-      border-bottom: 2px solid #808080;
-    }
-    
-    .nav a {
-      color: #000080;
-      text-decoration: none;
-      padding: 3px 10px;
-      margin: 0 5px;
-      border: 2px outset #FFFFFF;
-      background: #D4D0C8;
-      font-size: 12px;
-    }
-    
-    .nav a:active {
-      border-style: inset;
-    }
-    
-    .content {
-      width: 800px;
-      margin: 20px auto;
-      background: white;
-      border: 2px solid #808080;
-      padding: 20px;
-    }
-    
-    .download-btn {
-      display: block;
-      width: 200px;
-      margin: 20px auto;
-      padding: 10px;
-      background: #FF6600;
-      color: white;
-      text-align: center;
-      text-decoration: none;
-      font-weight: bold;
-      border: 2px outset #FF8533;
-    }
-    
-    .download-btn:active {
-      border-style: inset;
-    }
-    
-    .footer {
-      text-align: center;
-      font-size: 12px;
-      color: #666;
-      margin-top: 20px;
-      border-top: 1px solid #C0C0C0;
-      padding-top: 10px;
-    }
-    
-    .blink {
-      animation: blinker 1s linear infinite;
-    }
-    
-    @keyframes blinker {
-      50% { opacity: 0; }
-    }
-    
-    marquee {
-      background: #FFFF99;
-      color: #FF0000;
-      padding: 5px;
-      border: 1px solid #FF6600;
-    }
+      .snowflake { position: absolute; top: 0; color: #fff; font-size: 20px; }
+
+        body {
+            margin: 0;
+            background-image: url("../img/bg.gif");
+            color: #fceaff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        #container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        #header {
+            width: 100%;
+            background-image: url("../img/header.gif");
+            height: 150px;
+        }
+
+        #flex {
+            display: flex;
+            flex-wrap: nowrap; /* Prevent wrapping */
+        }
+
+        div.sidebar {
+            background-color: #241445;
+            width: 200px;
+            padding: 20px;
+            font-size: smaller;
+        }
+
+        div.main {
+            background-color: #43256E;
+            flex: 1;
+            padding: 20px;
+        }
+
+        div.footer {
+            background-color: #13092D;
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            text-align: center;
+            clear: both; /* Ensure footer is below all content */
+        }
+
+        h1, h2, h3 {
+            color: #ED64F5;
+        }
+
+        h1 {
+            font-size: 25px;
+        }
+
+        .box {
+            background-color: #13092D;
+            border: 1px solid #ED64F5;
+            padding: 10px;
+        }
     </style>
-    </head>
-    <body>
-      <div class="header">
-        <div class="logo">GICQ</div>
-      </div>
-    
-      <div class="nav">
-        <a href="http://gamma-world.eu/soft/icq2000b.exe">DOWNLOAD</a>
-        <a href="gicq_reg.html">REGISTER</a>
-      </div>
-    
-      <marquee scrollamount="3">Welcome to GICQ - ICQ 2000b & AIM 1.x-5.x alternative server!</marquee>
-    
-      <div class="content">
-        <center><p>START ICQ2000B!</p></center>
-        <a href="http://gamma-world.eu/soft/icq2000b.exe" class="download-btn">DOWNLOAD ICQ NOW!</a>
-    
-        <div class="footer">
-          <p>Copyright © 2024 Gamma World.</p>
-          <img src="data:image/gif;base64,R0lGODlhHAAUAJEAAAAAAP///wAAAAAAACH5BAUUAAIALAAAAAAcABQAAAJKlI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fkcjUBADs=" alt="Under Construction GIF - Yellow and black striped animation" width="28" height="20">
+    <script type="text/javascript">
+        var snowflakes = [];
+        var snowflakeCount = 50;
+
+        function createSnowflakes() {
+            for (var i = 0; i < snowflakeCount; i++) {
+                var snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.innerHTML = '*';
+                snowflake.style.left = Math.random() * 1000 + 'px';
+                snowflake.style.fontSize = Math.random() * 32 + 16 + 'px';
+                snowflake.style.top = Math.random() * document.documentElement.clientHeight + 'px';
+                document.body.appendChild(snowflake);
+                snowflakes.push(snowflake);
+            }
+        }
+
+        function moveSnowflakes() {
+            for (var i = 0; i < snowflakes.length; i++) {
+                var snowflake = snowflakes[i];
+                var top = parseFloat(snowflake.style.top);
+                var left = parseFloat(snowflake.style.left);
+
+                top += Math.random() * 2 + 1;
+                if (top > document.documentElement.clientHeight) {
+                    top = 0;
+                    left = Math.random() * 1000;
+                }
+
+                snowflake.style.top = top + 'px';
+                snowflake.style.left = left + 'px';
+            }
+        }
+
+        function animateSnowflakes() {
+            moveSnowflakes();
+            setTimeout(animateSnowflakes, 30);
+        }
+
+        window.onload = function() {
+            createSnowflakes();
+            animateSnowflakes();
+        };
+    </script>
+</head>
+<body>
+    <div id="container">
+        <a href="../index.html"><div id="header" style="height: 245px;"></div></a>
+        <div id="headerArea">
+            <div id="flex">
+                <div class="sidebar left">
+                    <h2>Разделы сайта</h2>
+                    <a href="index.html"><img src="../img/software.png" alt="Software"></a>
+                    <a href="feed.rss"><img src="../img/rss.png" alt="RSS"></a>
+                    <a href="construction.html"><img src="../img/gid.png" alt="Construction"></a>
+                    <a href="gicq.html"><img src="../img/gicq.png" alt="GICQ"></a>
+                    <a href="minetest.html"><img src="../img/minetest.png" alt="Minetest"></a>
+                    <a href="contacts.html"><img src="../img/contacts.png" alt="Contacts"></a>
+                    <a href="/bitbybyte-forum"><img src="../img/forum.png" alt="Форум"></a>
+                    <br>
+                    <p>
+                      <a href="https://validator.w3.org/markup/check?uri=referer"><img
+                        src="https://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Strict" height="31" width="88"></a>
+                    </p>
+                </div>
+                <div class="main">
+                  <h1>REGISTRATION</h1><hr>
+                  download ICQ 2000b<br>
+                  install and close ICQ completely<br>
+                  go to regedit in the path HKEY_CURRENT_USER\Software\Mirabilis\ICQ\DefaultPrefs<br>
+                  put this IP in the Default Server Host: 37.114.50.109 label.<br>
+                  Start ICQ<br>
+                  click existing user<br>
+                  write the UIN you want to get and the password.<br>
+                  done!<br>
+                </div>
+                <div class="sidebar right">
+                    <h2>Обновления</h2>
+                    <div class="box">
+                        <p>Обновление дизайна 5 Поколения</p>
+                        <ul style="padding-left:10px;">
+                            <li>Был обновлён дизайн 5 поколения</li>
+                            <li>Временно приостановлен* Gamma ID, происходит переход на Mastodon</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    
-      <script>
-        // Add "click" sound to buttons
-        document.querySelectorAll('a').forEach(link => {
-          link.addEventListener('mousedown', () => {
-            const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdH2Dem5xdoSTjnhxa3R/gXR0gYSOhGdjb32HgmZhb4WQi3Nqb3+JhXNsdn+DfW1yfoKFe3R6fX13cXiBhIZpYG1+hoBmX2h4gIFsY2p3eHl1c3mDioVzaWp5gIZycG93foFzcXV8gIZ6cXF4fYGBenh8fHp2dHuChn+Ac3mAf311cHN8gYR5cG9yenh1d4CLjIBsaG1+iIVsaW+AhoRtaXGAgoN8dHR3gYN5dXh6fXt4d3qBfnN0eH2Bg3l2eHl7e3p5fIGBfHh3eHh6fYCCgHx4dXZ8goZ7cHJ6foB8cnN3gYR/dnR2eXt6enl8gYR+eHZ2eXp6fH6AgYB8d3V2foWKgnZzeH+CfHRxcniBhnlvcHV3dnR3f4mMhHVrbXiChXt0cXN8hIZ6cXJ4fYB6en2Ag4J+enZ3fYGCfXh1dn+DhXt1dXh+gHx6fIB/gH15dXZ8gIR+eHd4e3+BeXV2fISHf3h0dXqAgnx2dXh+g4B4dXh8f357eXyAgHx6eXh6fYF/e3p4eHp9f4B+fHp4eHp/g4R4cXR6gIJ8dXR3fYOCeXV1eX6AfXt7fYGCfXl2d32BgYB8eHd6foKDfXh1d3yChHx2dXd9gYJ/fHh4fH+Be3l6foOEfnd0dXuAg316eHl9gYF8eXh5fYCAfXx8f4B+e3p5e36CgX97eHh7gIKCfXh2eH2Cg3t1dXmAhIN4c3Z7gIR+d3V2fICCfHh4e3+BgH16e31+f3x6en2AgX98eXh6f4GDgHt3d3t/g4F6dnZ6gYR/dnR1e4GEfnd2eHyBgn55eXyAgH57e3t+gIB9e3t9f4B/fXt6e36BgoB8eXl8gIKBenh3eX6Dgnt2dXh+goN8dnV4fYKDfXh2eH2Bg316eXyCg4F6dnZ6gYOCe3d2en+ChH16d3h9goN+eXd4fYGCf3t5en6BgX16eXt/goJ/e3l6fYCCgH17e32AgX99e3x/gIF+e3p7foGCgH15eXyBg4J8eHd6gIOCfHd2eX+ChH55dnl+goN+enl7f4GBfnt6e3+AgH58e31/gIF/fHp7foGCgHx5eXyBgoF9eXh6gIODfXh2eX+Dgnt3dnl+g4R+eXd4fYKDf3p4en6Cgn97eXp+gYKAfXp6fYCCgX57e32AgYB+fHx+gIF/fXt7foGCgX15eHqAg4N9eHd5f4OEfXh2eH6ChH56eHl+goN/e3l6foGCgH17e32AgYF+fHt9gIGAfnx8fn+BgX98e3t/goKBfXl5e4CDg315d3l/g4N9eXd5foKDf3l4eX6Cg398eXp9goKAfnt6foCBgX58e32AgYF/fXx9f4CBf317fICCgoB9eXp9gYOCfXh3eoCDg316eHl+goSBenh4fIGDgX56eXyBgoF/fHp8gIGBf3x7fYCBgX98fH2AgIB/fXx9gIKCf3t5en6Cg4F9eXh7gYODfnl3eX+DhH96eHl+goOBfnp5fICCgn97env/g4KAfnp7foCCgX98e32AgYF/fHx+gIGAf3x8foCCgn97eXp+goOCfnl4en+DhH55d3l+goSCfXl4e4GDgn97eXt/goKAfnt6fYGCgX98e32AgYF/fHx+gIGAf3x7fYGCgoB9enp+goKCfnl4en+Eg316eHl+g4OCfnl4e4CDgn98eXt/goKBfnt6fYGCgX98e32AgYGAfXx9gIGBf3x7fYCCgoF+enp9goOCfnl4en+DhIB7eHl+g4SCfnl4e4GDgn98eXt/g4OCfnt6fYGCgX98e32BgoGAfHt9gIKBgH17fICCgoF+enl9goODfnl4eX6DhIJ9eXh7gIODgHt5en+DgoF+enl9goOCf3t6fIGCgYB8e32BgoGAfHt8gIKCgX57e3yAgoKBfnp5fIGDg316eHl+g4SCfnl4en+Dg4F9eXp9goOCgHt5e3+DgoF+enp8goOCgHx6e3+CgoF/e3t9gIKCgH17e36CgoGAe3p7foKDgn55eHqAg4OCfXh4en+EhIF8eHl8goODgHt5en2Cg4J/e3p7f4KCgX97e32BgoGAfHt8f4KCgX97e32AgoKBfnt6fYGDg4B8eXl9goODgHp4eXyChIOAe3l5fIKDgoB8eXt+goOCgHx6e3+CgoGAe3t8gIKCgX97e32AgoKBf3t7fYCCgoF+e3p9gYODgX15eXyBg4OBfHl5fIGDg4F9eXp8goOCgX17e32BgoGAfHt8f4KCgYB8e3x/goKBgHx7fICCgoF/e3t9gIKCgX57enhneICAfXl5Y1ZTVZCioIJxaGF6kZmVcmNdX36UnIxwX1tihp2hiWthX3GIj4p2aWZsf4yPgHBlZHmNmJN7bGhpc4GIhXpsaG1+i5KKfHNucHqFjYd6bmxwe4mOiH5ybnJ/iY2HeG9udYSMjYR0bW55hYyKeXBtcX+KjYh8cW5xfYmOiX9zbXB7iI6KeHBtdIONjoZ3bm14hY2Nd29tc4CLkIl6cG1yf4uQiXxwbXN+jJGMfXJtcH2KkYx9cm1xfouQin5zbXF9ipCMgHRucXyJj4t/dG5wfImPi4B1bnB6iI+MgXZvcXuIjot/dW9xfYmPi4B0bnF9ipCMf3RucX2Kj4x/dG5xfYqPjIB1bnF8iY+MgXVucHuJj4yBdm9xe4iPi4F2cHJ8iI6LgHZwcn2Jj4uAdW9yfonQi4B1b3J9iY+LgHVvcnyJj4yBdm9xe4iPi4F2cHJ8iI6LgXZwcn2Ij4uAdnByfoiPi4B1cHJ+iY+LgHVvcn2Jj4yBdW9xfImPjIF2b3F8iI+MgXZvcXyIj4uBdnByPD0+P0EV');
-            audio.play();
-          });
-        });
-      </script>
-    </body>
-    </html>
+        <div class="footer">(C) Gamma World 2024</div>
+        <div class="snowflake"></div>
+    </div>
+</body>
+</html>

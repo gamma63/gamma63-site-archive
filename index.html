@@ -1,128 +1,160 @@
-<html><head><base href="." /><style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>Gamma World</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        /* user styles */
 
-body {
-  background: #000;
-  color: #00ff00;
-  font-family: "Courier New", monospace;
-  padding: 20px;
-  line-height: 1.4;
-}
+      .snowflake { position: absolute; top: 0; color: #fff; font-size: 20px; }
 
-pre {
-  white-space: pre-wrap;
-  font-family: "Courier New", monospace;
-}
+        body {
+            margin: 0;
+            background-image: url("img/bg.gif");
+            color: #fceaff;
+        }
 
-.prompt {
-  color: #00ff00;
-}
+        * {
+            box-sizing: border-box;
+        }
 
-.cursor {
-  animation: blink 1s infinite;
-  display: inline-block;
-  width: 8px;
-  height: 15px;
-  background: #00ff00;
-  vertical-align: middle;
-}
+        #container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-a {
-  color: #00ff00;
-  text-decoration: underline;
-}
+        #header {
+            width: 100%;
+            background-image: url("img/header.gif");
+            height: 150px;
+        }
 
-a:hover {
-  background: #00ff00;
-  color: #000;
-}
+        #flex {
+            display: flex;
+            flex-wrap: nowrap; /* Prevent wrapping */
+        }
 
-.menu {
-  margin: 20px 0;
-  border: 1px solid #00ff00;
-  padding: 10px;
-}
+        div.sidebar {
+            background-color: #241445;
+            width: 200px;
+            padding: 20px;
+            font-size: smaller;
+        }
 
-@keyframes blink {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
-}
+        div.main {
+            background-color: #43256E;
+            flex: 1;
+            padding: 20px;
+        }
 
-.terminal-window {
-  border: 1px solid #00ff00;
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 800px;
-}
+        div.footer {
+            background-color: #13092D;
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            text-align: center;
+            clear: both; /* Ensure footer is below all content */
+        }
 
-.header {
-  border-bottom: 1px solid #00ff00;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
+        h1, h2, h3 {
+            color: #ED64F5;
+        }
 
-</style></head><body>
+        h1 {
+            font-size: 25px;
+        }
 
-<title>Gamma World</title>
-<div class="terminal-window">
-  <div class="header">
-    <pre>
-         _____                                 _    _            _     _ 
-	|  __ \                               | |  | |          | |   | |
-	| |  \/ __ _ _ __ ___  _ __ ___   __ _| |  | | ___  _ __| | __| |
-	| | __ / _` | '_ ` _ \| '_ ` _ \ / _` | |/\| |/ _ \| '__| |/ _` |
-	| |_\ \ (_| | | | | | | | | | | | (_| \  /\  / (_) | |  | | (_| |
-	 \____/\__,_|_| |_| |_|_| |_| |_|\__,_|\/  \/ \___/|_|  |_|\__,_|
-	<br>
-	<img src="img/ng.gif" alt="Happy new year!" style="width: 100%;">
-                                                   
-    </pre>
-  </div>
+        .box {
+            background-color: #13092D;
+            border: 1px solid #ED64F5;
+            padding: 10px;
+        }
+    </style>
+    <script type="text/javascript">
+        var snowflakes = [];
+        var snowflakeCount = 50;
 
-  <div class="prompt">[visitor@gammaworld ~]$ ls -l</div>
-  <pre>
-total 1
--rw-r--r--  1 visitor visitor  420 Jan 1 00:00 README
-  </pre>
+        function createSnowflakes() {
+            for (var i = 0; i < snowflakeCount; i++) {
+                var snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.innerHTML = '*';
+                snowflake.style.left = Math.random() * 1000 + 'px';
+                snowflake.style.fontSize = Math.random() * 32 + 16 + 'px';
+                snowflake.style.top = Math.random() * document.documentElement.clientHeight + 'px';
+                document.body.appendChild(snowflake);
+                snowflakes.push(snowflake);
+            }
+        }
 
-  <div class="prompt">[visitor@gammaworld ~]$ cat README</div>
-  <pre>
-Welcome to my Gamma World!
-This is an small portal about software, enjoy :-)
+        function moveSnowflakes() {
+            for (var i = 0; i < snowflakes.length; i++) {
+                var snowflake = snowflakes[i];
+                var top = parseFloat(snowflake.style.top);
+                var left = parseFloat(snowflake.style.left);
 
-Button code:
-<img src="img/gammaworld.png">
-<textarea><a href="http://gamma-world.eu"><img src="http://gamma-world.eu/img/gammaworld.png" alt="Gamma World"></a></textarea>
+                top += Math.random() * 2 + 1;
+                if (top > document.documentElement.clientHeight) {
+                    top = 0;
+                    left = Math.random() * 1000;
+                }
 
-Current system status:
-Kernel: HTML 4.01 Strict
-Uptime: >87 days
-Memory: 640K (should be enough for anybody)
-  </pre>
+                snowflake.style.top = top + 'px';
+                snowflake.style.left = left + 'px';
+            }
+        }
 
-  <div class="menu">
-    <div class="prompt">[visitor@gammaworld ~]$ echo $MENU</div>
-    <pre>
-1. <a href="/bitbybyte-forum">Forum</a>
-2. <a href="contents/gicq.html">GICQ</a>
-3. <a href="contents/index.html">Software archive</a>
-4. <a href="contents/feed.rss">RSS</a>
-5. <a href="/gid/web/">Gamma ID</a>
-6. <a href="contents/contacts.html">Contacts</a>
-7. <a href="contents/minecraft.html">Minecraft</a>
-<!--6. <a href="/contents/construction.html">Other</a-->
-    </pre>
-  </div>
-  
+        function animateSnowflakes() {
+            moveSnowflakes();
+            setTimeout(animateSnowflakes, 30);
+        }
 
-  <div class="prompt">[visitor@gammaworld ~]$ <span class="cursor"></span></div>
-  <div id='linuxring'>
-    <script type="text/javascript" src="http://teethinvitro.neocities.org/webring/linuxring/script/onionring-variables.js"></script>
-    <script type="text/javascript" src="http://teethinvitro.neocities.org/webring/linuxring/script/onionring-widget.js"></script>
-  </div>
-</div>
-</body></html>
+        window.onload = function() {
+            createSnowflakes();
+            animateSnowflakes();
+        };
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div id="header" style="height: 245px;"></div>
+        <div id="headerArea">
+            <div id="flex">
+                <div class="sidebar left">
+                    <h2>Разделы сайта</h2>
+                    <a href="contents/index.html"><img src="img/software.png" alt="Software"></a>
+                    <a href="contents/feed.rss"><img src="img/rss.png" alt="RSS"></a>
+                    <a href="contents/construction.html"><img src="img/gid.png" alt="Construction"></a>
+                    <a href="contents/gicq.html"><img src="img/gicq.png" alt="GICQ"></a>
+                    <a href="contents/minetest.html"><img src="img/minetest.png" alt="Minetest"></a>
+                    <a href="contents/contacts.html"><img src="img/contacts.png" alt="Contacts"></a>
+                    <a href="/bitbybyte-forum"><img src="img/forum.png" alt="Форум"></a>
+                    <br>
+                    <p>
+                      <a href="https://validator.w3.org/markup/check?uri=referer"><img
+                        src="https://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Strict" height="31" width="88"></a>
+                    </p>
+                </div>
+                <div class="main">
+                    <h1>Добро пожаловать на Gamma World!</h1>
+                    <p>Это маленький портал о софте и компах, хорошего визита! :-)</p>
+                    <br><br>
+                    <p>С НОВЫМ 2025 ГОДОМ!<img style="float: right;" src="img/yolka.gif" width="128px" height="128px"></p>
+                </div>
+                <div class="sidebar right">
+                    <h2>Обновления</h2>
+                    <div class="box">
+                        <p>Обновление дизайна 5 Поколения</p>
+                        <ul style="padding-left:10px;">
+                            <li>Был обновлён дизайн 5 поколения</li>
+                            <li>Временно приостановлен* Gamma ID, происходит переход на Mastodon</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">(C) Gamma World 2024</div>
+        <div class="snowflake"></div>
+    </div>
+</body>
+</html>
