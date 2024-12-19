@@ -1,774 +1,660 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <html>
 <head>
     <title>Gamma World</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <style type="text/css">
-        /* user styles */
-
-      .snowflake { position: absolute; top: 0; color: #fff; font-size: 20px; }
-
+    <style>
         body {
-            margin: 0;
-            background-image: url("../img/bg.gif");
-            color: #fceaff;
+            background-image: url(../img/bg.gif);
         }
-
         * {
-            box-sizing: border-box;
+            color: white;
         }
-
-        #container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        #header {
-            width: 100%;
-            background-image: url("../img/header.gif");
-            height: 150px;
-        }
-
-        #flex {
-            display: flex;
-            flex-wrap: nowrap; /* Prevent wrapping */
-        }
-
-        div.sidebar {
-            background-color: #241445;
-            width: 200px;
-            padding: 20px;
-            font-size: smaller;
-        }
-
-        div.main {
-            background-color: #43256E;
-            flex: 1;
-            padding: 20px;
-        }
-
-        div.footer {
-            background-color: #13092D;
-            width: 100%;
-            height: 40px;
-            padding: 10px;
-            text-align: center;
-            clear: both; /* Ensure footer is below all content */
-        }
-
-        h1, h2, h3 {
-            color: #ED64F5;
-        }
-
-        h1 {
-            font-size: 25px;
-        }
-
-        .box {
-            background-color: #13092D;
-            border: 1px solid #ED64F5;
-            padding: 10px;
-        }
-    </style>
-    <script type="text/javascript">
-        var snowflakes = [];
-        var snowflakeCount = 50;
-
-        function createSnowflakes() {
-            for (var i = 0; i < snowflakeCount; i++) {
-                var snowflake = document.createElement('div');
-                snowflake.className = 'snowflake';
-                snowflake.innerHTML = '*';
-                snowflake.style.left = Math.random() * 1000 + 'px';
-                snowflake.style.fontSize = Math.random() * 32 + 16 + 'px';
-                snowflake.style.top = Math.random() * document.documentElement.clientHeight + 'px';
-                document.body.appendChild(snowflake);
-                snowflakes.push(snowflake);
-            }
-        }
-
-        function moveSnowflakes() {
-            for (var i = 0; i < snowflakes.length; i++) {
-                var snowflake = snowflakes[i];
-                var top = parseFloat(snowflake.style.top);
-                var left = parseFloat(snowflake.style.left);
-
-                top += Math.random() * 2 + 1;
-                if (top > document.documentElement.clientHeight) {
-                    top = 0;
-                    left = Math.random() * 1000;
-                }
-
-                snowflake.style.top = top + 'px';
-                snowflake.style.left = left + 'px';
-            }
-        }
-
-        function animateSnowflakes() {
-            moveSnowflakes();
-            setTimeout(animateSnowflakes, 30);
-        }
-
-        window.onload = function() {
-            createSnowflakes();
-            animateSnowflakes();
-        };
-    </script>
+    </style>    
 </head>
 <body>
-    <div id="container">
-        <a href="../index.html"><div id="header" style="height: 245px;"></div></a>
-        <div id="headerArea">
-            <div id="flex">
-                <div class="sidebar left">
-                    <h2>Разделы сайта</h2>
-                    <a href="index.html"><img src="../img/software.png" alt="Software"></a>
-                    <a href="feed.rss"><img src="../img/rss.png" alt="RSS"></a>
-                    <a href="http://gid.root.sx"><img src="../img/gid.png" alt="gid without https link"></a>
-                    <a href="gicq.html"><img src="../img/gicq.png" alt="GICQ"></a>
-                    <a href="minetest.html"><img src="../img/minetest.png" alt="Minetest"></a>
-                    <a href="contacts.html"><img src="../img/contacts.png" alt="Contacts"></a>
-					<a href="/bitbybyte-forum"><img src="../img/forum.png" alt="Форум"></a>
-                    <br>
-                    <p>
-                      <a href="https://validator.w3.org/markup/check?uri=referer"><img
-                        src="https://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Strict" height="31" width="88"></a>
-                    </p>
-                </div>
-                <div class="main">
-					<script type="text/javascript" src="http://teethinvitro.neocities.org/webring/linuxring/script/onionring-variables.js"></script>
-					<script type="text/javascript" src="http://teethinvitro.neocities.org/webring/linuxring/script/onionring-widget.js"></script>
-					<link rel="stylesheet" href="/onionring.css">
-					<table border="1" style="margin: auto;">
-						<h1>Архив софта</h1>
-						<h4>Shells</h4>
-						<p>Norton Commanders</p>
-						<table border="1" style="margin: auto;">
-						<tr>
-							<td>Norton Commander 1.0 [38kb]</td>
-							<td><a href="/soft/archive/nc1.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-						</tr>
-						<tr>
-							<td>Norton Commander 2.0 [57kb]</td>
-							<td><a href="/soft/archive/nc2.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-						</tr>
-						<tr>
-							<td>Norton Commander 3.0 [803kb]</td>
-							<td><a href="/soft/archive/nc3.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-						</tr>
-						<tr>
-							<td>Norton Commander 4.0 [278kb]</td>
-							<td><a href="/soft/archive/nc4.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-						</tr>
-						<tr>
-							<td>Norton Commander 5.0 [2180kb]</td>
-							<td><a href="/soft/archive/nc50.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-						</tr>
-						</table>
-						<table border="1" style="margin: auto;">
-						<p>Volcov commanders</p>
-						<tr>
-							<td>Volcov Commander 4.0 [243kb]</td>
-							<td><a href="/soft/archive/vc40.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-						</tr>
-						<tr>
-							<td>Volcov Commander 5.01 [81kb]</td>
-							<td><a href="/soft/archive/vc5.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-						</tr>
-						</table>
-						<table border="1" style="margin: auto;">
-						<p>Other shells</p>
-						<tr>
-							<td>Dosshell [131kb]</td>
-							<td><a href="/soft/archive/dosshell.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-						</tr>
-						</table>
-						<table border="1" style="margin: auto;">
-						<p>Shells for Win 3.X</p>
-						<tr>
-							<td>Calmira [1023kb]</td>
-							<td><a href="/soft/archive/calmir.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-						</tr>
-						<tr>
-							<td>Win logo [168kb]</td>
-							<td><a href="/soft/archive/calmir.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-						</tr>
-						</table>
-						<h4>Archivators Dos, Windows 3x-9x.</h4>
-						<table border="1" style="margin: auto;">
-						<tr>
-							<td>Arj [151kb]</td>
-							<td><a href="/soft/archive/arj.exe"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-						</tr>
-						<tr>
-							<td>7zip DOS [49kb]</td>
-							<td><a href="/soft/archive/7zip.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-						</tr>
-						</table>
-						<h4>Emulators of some vintage systems.</h4>
-						<table border="1" style="margin: auto;">
-						<tr>
-							<td>Computer and game console emulator “Emulator 3000” [1474kb]</td>
-							<td><a href="/soft/archive/3000.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-						</tr>
-						<tr>
-							<td>Apple 2 family emulator [316kb]</td>
-							<td><a href="/soft/archive/Apple2.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-						</tr>
-						<tr>
-							<td>ZX [454kb]</td>
-							<td><a href="/soft/archive/r80v030.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-						</tr>
-						<tr>
-							<td>Radio 86 RK [127kb]</td>
-							<td><a href="/soft/archive/Emurk200.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-						</tr>
-						<tr>
-							<td>BK 0001 [127kb]</td>
-							<td><a href="/soft/archive/Bk0010.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-						</tr>
-						<tr>
-							<td>Korvet [2373kb]</td>
-							<td><a href="/soft/archive/Bk0010.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-						</tr>
-						</table>
-						<p>3dfx emulators</p>
-						<table border="1" style="margin: auto;">
-						<tr>
-							<td>3Dfx Emulator v0.2 from ELZ SOFTWARE [970kb]</td>
-							<td><a href="/soft/archive/3dfx1.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-						</tr>
-						</table>
-						<h4>Programming languages Dos, Windows 3x-9x.</h4>
-						<p>Assembler</p>
-						<table border="1" style="margin: auto;">
-							<tr>
-								<td>Turbo assembler [241kb]</td>
-								<td><a href="/soft/archive/tasm.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Turbo assembler shell [86kb]</td>
-								<td><a href="/soft/archive/ts300.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Microsoft assembler [9254kb]</td>
-								<td><a href="/soft/archive/masm.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Turbo shell [73kb]</td>
-								<td><a href="/soft/archive/ts.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-						</table>
-						<p>Basic</p>
-						<table border="1" style="margin: auto;">
-							<tr>
-								<td>Qbasic [560kb]</td>
-								<td><a href="/soft/archive/qbas4.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Gw basic [60kb]</td>
-								<td><a href="/soft/archive/gwbasic.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>		
-							<tr>
-								<td>Basic ver 2.0 [48kb]</td>
-								<td><a href="/soft/archive/basic.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-						</table>
-						<p>Pascal</p>
-						<table border="1" style="margin: auto;">
-							<tr>
-								<td>Turbo pascal 1.0 [61kb]</td>
-								<td><a href="/soft/archive/tp1.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Turbo pascal 1.0 [61kb]</td>
-								<td><a href="/soft/archive/tp1.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Turbo pascal 2.0 [78kb]</td>
-								<td><a href="/soft/archive/tp20.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Turbo pascal 3.0 [170kb]</td>
-								<td><a href="/soft/archive/tp302.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Turbo pascal 4.0 [170kb]</td>
-								<td><a href="/soft/archive/tp4.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Turbo pascal 5.0 [1198kb]</td>
-								<td><a href="/soft/archive/tp5.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Turbo pascal 7.0 [800kb]</td>
-								<td><a href="/soft/archive/turbo.exe"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-						</table>
-						<p>C</p>
-						<table border="1" style="margin: auto;">
-							<tr>
-								<td>Quick C (1987) [831kb]</td>
-								<td><a href="/soft/archive/msq.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Borland C [4133kb]</td>
-								<td><a href="/soft/archive/bc.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-						</table>
-						<h4>Scientific and pseudoscientific programs.</h4>
-						<p>Astronomy</p>
-						<table border="1" style="margin: auto;">
-							<tr>
-								<td>Gravity [96kb]</td>
-								<td><a href="/soft/archive/gravity.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Jupsat [50kb]</td>
-								<td><a href="/soft/archive/jupsat.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Moon [52kb]</td>
-								<td><a href="/soft/archive/moon.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Star view [178kb]</td>
-								<td><a href="/soft/archive/starview.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Astro [90kb]</td>
-								<td><a href="/soft/archive/astro202.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Solaris [62kb]</td>
-								<td><a href="/soft/archive/sol.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-						</table>
-						<p>Reference books, maps, tests</p>
-						<table border="1" style="margin: auto;">
-							<tr>
-								<td>Flags [150kb]</td>
-								<td><a href="/soft/archive/flags.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-						</table>
-						<h4>Classic Operating Systems</h4>
-						<p>Important</p>
-						<table border="1" style="margin: auto;">
-							<tr>
-								<td>Win image [311kb]</td>
-								<td><p>p.s: This program creates images of some DOS versions. So you can't do without it when creating bootable floppy disks downloaded from this site.</p></td>
-								<td><a href="/soft/archive/winimage.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-						</table>
-						<p>Dos</p>
-						<table border="1" style="margin: auto;">
-							<tr>
-								<td>MS-DOS 1.0 [100kb]</td>
-								<td><a href="/soft/archive/dos1.1.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>MS-DOS 2.11 [84kb]</td>
-								<td><a href="/soft/archive/msdos211.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>MS-DOS 3.3 [420kb]</td>
-								<td><a href="/soft/archive/msdos33.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>MS-DOS 3.30 for MK88, EC1840-** [216kb]</td>
-								<td><a href="/soft/archive/ec1841.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>MS-DOS 5.0 [1276kb]</td>
-								<td><a href="/soft/archive/msdos50.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>MS-DOS 5.0 RUS [3381kb]</td>
-								<td><a href="/soft/archive/msdos50rus.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>MS-DOS 6.22 [1276kb]</td>
-								<td><a href="/soft/archive/msdos622.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>PC DOS [78kb]</td>
-								<td><a href="/soft/archive/pc-dos.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>IBM DOS [100kb]</td>
-								<td><a href="/soft/archive/ibm-dos.exe"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-						</table>
-						<p>Retro versions of Windows</p>
-						<table border="1" style="margin: auto;">
-							<tr>
-								<td>Windows 1.01 [729kb]</td>
-								<td><a href="/soft/archive/win101.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Windows 2.03 [1411kb]</td>
-								<td><a href="/soft/archive/win203.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Windows 2.1 [1449kb]</td>
-								<td><a href="/soft/archive/win211.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Windows/286 Soviet [2293kb]</td>
-								<td><a href="/soft/archive/win21rus.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Windows 3.0 [4606kb]</td>
-								<td><a href="/soft/archive/win30.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Windows 3.1 for workgroups [10553kb]</td>
-								<td><a href="/soft/archive/win311.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Windows NT 3.1 [53000kb]</td>
-								<td><a href="/soft/archive/win31ntfull.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Windows Chicago build 73 [16431kb]</td>
-								<td><a href="/soft/archive/chicago73.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Windows 95 [21836kb]</td>
-								<td><a href="/soft/archive/win95orig.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-						</table>
-						<h4>Local networks, internet</h4>
-						<p>Internet and other networks</p>
-						<table border="1" style="margin: auto;">
-							<tr>
-								<td>Mosaic 2 [242kb]</td>
-								<td><a href="/soft/archive/mosaic2.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Arachne 1.7 [1558kb]</td>
-								<td><a href="/soft/archive/arachne.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Netscape 4.08 for win 3.x [9901kb]</td>
-								<td><a href="/soft/archive/n16-4.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Internet Explorer 5.0 for win 3.x [11239kb]</td>
-								<td><a href="/soft/archive/ie16-50.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Internet Explorer 3.0 [3992kb]</td>
-								<td><a href="/soft/archive/iew31.exe"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Opera 3.51 for win 3.x [1384kb]</td>
-								<td><a href="/soft/archive/opera16-351.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>ICQ for win 3.x [1358kb]</td>
-								<td><a href="/soft/archive/icq.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Netscape navigator [3072kb]</td>
-								<td><a href="/soft/archive/n16e304.exe"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Win dialer [77kb]</td>
-								<td><a href="/soft/archive/windial.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Internet Connect [1384kb]</td>
-								<td><a href="/soft/archive/opera16-351.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>View html [76kb]</td>
-								<td><a href="/soft/archive/viewht.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Internet Connect [1384kb]</td>
-								<td><a href="/soft/archive/opera16-351.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-						</table>
-						<p>FTN & BBS</p>
-						<table border="1" style="margin: auto;">
-							<tr>
-								<td>Tornado BBS [163kb]</td>
-								<td><a href="/soft/archive/tor160b.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Delta 5 BBS [546kb]</td>
-								<td><a href="/soft/archive/202.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Maximus BBS [1692kb]</td>
-								<td><a href="/soft/archive/maxbbs.exe"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>BBS utils [40kb]</td>
-								<td><a href="/soft/archive/utilsbbs.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Fossil driver [35kb]</td>
-								<td><a href="/soft/archive/adf.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Terminal dos [169kb]</td>
-								<td><a href="/soft/archive/tm.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Telix [134kb]</td>
-								<td><a href="/soft/archive/telix.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Fido mail [199kb]</td>
-								<td><a href="/soft/archive/15.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-						</table>
-						<h4>Multimedia tools for DOS & Windows 3x-9x.</h4>
-						<p>Dos players</p>
-						<table border="1" style="margin: auto;">
-							<tr>
-								<td>Dosamp [405kb]</td>
-								<td><a href="/soft/archive/dosamp.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-						</table>
-						<p>Sound programs for Windows 3.x - 9.x</p>
-						<table border="1" style="margin: auto;">
-							<tr>
-								<td>Sound Forge 4.5 [7760kb]</td>
-								<td><a href="/soft/archive/sf45.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Gold wave [210kb]</td>
-								<td><a href="/soft/archive/gw.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>A wave [631kb]</td>
-								<td><a href="/soft/archive/awave.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Winamp 1.0 [195kb]</td>
-								<td><a href="/soft/archive/winamp10.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Winamp 1.2 [207kb]</td>
-								<td><a href="/soft/archive/winamp12.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Win player for win 3.x [825kb]</td>
-								<td><a href="/soft/archive/winamp12.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>MOP [1530kb]</td>
-								<td><a href="/soft/archive/mop.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-						</table>
-						<p>Video programs for Windows 3.x - 9.x</p>
-						<table border="1" style="margin: auto;">
-							<tr>
-								<td>Adobe Premiere 5.0 [30000kb]</td>
-								<td><a href="/soft/archive/apremier5.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Xing mpeg player 3.30 [2230kb]</td>
-								<td><a href="/soft/archive/xmp330rus.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Xing dvd player [1191kb]</td>
-								<td><a href="/soft/archive/xingdvd.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-						</table>
-						<h4>Work and graphics programs for Windows 3x-9x.</h4>
-						<p>Windows 3x-9x graphics programs.</p>
-						<table border="1" style="margin: auto;">
-							<tr>
-								<td>Photoshop 3.0 [9370kb]</td>
-								<td><a href="/soft/archive/photoshop30.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-						</table>
-						<h4>Text editors and tools</h4>
-						<p>Text tools for Windows 3x-9x<p>
-						<table border="1" style="margin: auto;">
-							<tr>
-								<td>Adobe acrobat reader for windows 3.x [4038kb]</td>
-								<td><a href="/soft/archive/acro301.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Microsoft Word Viewer 97 for Windows 3.x [4626kb]</td>
-								<td><a href="/soft/archive/ww.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Power Paint Viewer for Windows 3.x [1858kb]</td>
-								<td><a href="/soft/archive/pp.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-						</table>
-						<p>Text editors for Windows 3x-9x<p>
-						<table border="1" style="margin: auto;">
-							<tr>
-								<td>Microsoft Word 2.0 for Windows 3.x [5814kb]</td>
-								<td><a href="/soft/archive/word20.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Microsoft Excel 4.0 for Windows 3.x [3181kb]</td>
-								<td><a href="/soft/archive/exel40.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-						</table>
-						<h4>Sound drivers for Dos, Windows 3.x</h4>
-						<p>Ess</p>
-						<table border="1" style="margin: auto;">
-							<tr>
-								<td>ess 1868 [192kb]</td>
-								<td><a href="/soft/archive/1868w31.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>ess 1869 [200kb]</td>
-								<td><a href="/soft/archive/1869w31.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>ess 1878 [191kb]</td>
-								<td><a href="/soft/archive/1878w31.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>ess 1879 [199kb]</td>
-								<td><a href="/soft/archive/1868w31.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>ess 1887 [180kb]</td>
-								<td><a href="/soft/archive/1868w31.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>ess xx88 [419kb]</td>
-								<td><a href="/soft/archive/win31drv.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>ess pnp sound card setup [4kb]</td>
-								<td><a href="/soft/archive/init_ess.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-						</table>
-						<p>Creative</p>
-						<table border="1" style="margin: auto;">
-							<tr>
-								<td>Sound Blaster driver package [261kb]</td>
-								<td><a href="/soft/archive/soundbl.arj"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Sound Blaster 16 driver [94kb]</td>
-								<td><a href="/soft/archive/sb16wu.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Sound Blaster 2.0 driver [12kb]</td>
-								<td><a href="/soft/archive/sb20du.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-						</table>
-						<h4>SCSI, USB drivers for DOS/Win 3.x</h4>
-						<p>AK SCSI-1 and SCSI-2 controllers</p>
-						<table border="1" style="margin: auto;">
-							<tr>
-								<td>AK47ISA SCSI1 and SCSI2 controller driver [178kb]</td>
-								<td><a href="/soft/archive/ak47isa_all.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>CSC AK47ISA controller card DOS/Win 3.1 driver [13kb]</td>
-								<td><a href="/soft/archive/ak47isa_dos.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>AK47VLB SCSI1 and SCSI2 controller driver [350kb]</td>
-								<td><a href="/soft/archive/ak47vlb_all.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>CSC AK47VLB controller card DOS/Win 3.1 driver [12kb]</td>
-								<td><a href="/soft/archive/ak47vlb_dos.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-						</table>
-						<p>CSC FC* Controller Card</p>
-						<table border="1" style="margin: auto;">
-							<tr>
-								<td>CSC F3 controller card DOS/Win 3.1 driver [13kb]</td>
-								<td><a href="/soft/archive/fc3_dos.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Set of utilities for operation and diagnostics of FC line controllers [149kb]</td>
-								<td><a href="/soft/archive/fc32scsi_dos.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>CSC FastCache64 IDE Controller driver with support for 2"88 floppy disks [118kb]</td>
-								<td><a href="/soft/archive/fc64ide_dos.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>CSC FastCache64 SCSI Controller driver [118kb]</td>
-								<td><a href="/soft/archive/fc64scsi_dos.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-						</table>
-						<p>Usb Drivers for DOS & Win 9x</p>
-						<table border="1" style="margin: auto;">
-							<tr>
-								<td>Flash drive driver for Windows 98 SE (For english version of windows only) [603kb]</td>
-								<td><a href="/soft/archive/nusb22e.exe"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Flash drive driver for Windows 98 SE (For russian version of windows only) [603kb]</td>
-								<td><a href="/soft/archive/nusb22r.exe"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-						</table>
-						<p>CD-ROM drivers</p>
-						<table border="1" style="margin: auto;">
-							<tr>
-								<td>Dos usb [25kb]</td>
-								<td><a href="/soft/archive/usbdos.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Cd emu [1kb]</td>
-								<td><a href="/soft/archive/cdemu2.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-						</table>
-						<h4>Useful drivers for DOS & Win 3.x</h4>
-						<p>Drivers for work with HDD</p>
-						<table border="1" style="margin: auto;">
-							<tr>
-								<td>FAT 32 for MS-DOS 6.22 [22kb]</td>
-								<td><a href="/soft/archive/fat32dos.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>FAT 32 for Windows NT 4.0 [736kb]</td>
-								<td><a href="/soft/archive/fat32nt.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>NTFS for DOS [37kb]</td>
-								<td><a href="/soft/archive/ntfsdos.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Paragon NTFS for DOS [194kb]</td>
-								<td><a href="/soft/archive/ntfsdos.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>NTFS for Windows 98 SE [754kb]</td>
-								<td><a href="/soft/archive/ntfs98.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Osr2kit [91kb]</td>
-								<td><a href="/soft/archive/osr2kit.exe"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-							<tr>
-								<td>Doslfn [75kb]</td>
-								<td><a href="/soft/archive/doslfn.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
-							</tr>
-						</table>
-                </div>
-                <div class="sidebar right">
-                    <h2>Обновления</h2>
-                    <div class="box">
-                        <p>Обновление дизайна 5 Поколения</p>
-                        <ul style="padding-left:10px;">
-                            <li>Был обновлён дизайн 5 поколения</li>
-                            <li>Gamma ID, перешёл на OpenVK https://gid.root.sx</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer">(C) Gamma World 2024</div>
-        <div class="snowflake"></div>
-    </div>
+        <center>
+            <h2>Разделы сайта</h2>
+            <a href="../index.html"><img src="../img/index.png" alt="Index"></a>
+            <a href="index.html"><img src="../img/fdd525.png" alt="Software from FDD5-25"></a>
+            <!--a href="contents/soft.html"><img src="img/software.png" alt="Software"></a-->
+            <a href="feed.rss"><img src="../img/rss.png" alt="RSS"></a>
+            <a href="http://gid.root.sx"><img src="../img/gid.png" alt="gid (https only)"></a>
+            <a href="gicq.html"><img src="../img/gicq.png" alt="GICQ"></a>
+            <a href="minetest.html"><img src="../img/minecraft.png" alt="Minecraft"></a>
+            <a href="contacts.html"><img src="../img/contacts.png" alt="Contacts"></a>
+            <a href="updates.html"><img src="../img/updates.png" alt="Updates"></a>
+            <a href="/bitbybyte-forum"><img src="../img/forum.png" alt="Форум"></a>
+			<script type="text/javascript" src="http://teethinvitro.neocities.org/webring/linuxring/script/onionring-variables.js"></script>
+			<script type="text/javascript" src="http://teethinvitro.neocities.org/webring/linuxring/script/onionring-widget.js"></script>
+			<table border="1" style="margin: auto;">
+				<h1>Архив софта</h1>
+				<h4>Shells</h4>
+				<p>Norton Commanders</p>
+				<table border="1" style="margin: auto;">
+				<tr>
+					<td>Norton Commander 1.0 [38kb]</td>
+					<td><a href="/soft/archive/nc1.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+				</tr>
+				<tr>
+					<td>Norton Commander 2.0 [57kb]</td>
+					<td><a href="/soft/archive/nc2.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+				</tr>
+				<tr>
+					<td>Norton Commander 3.0 [803kb]</td>
+					<td><a href="/soft/archive/nc3.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+				</tr>
+				<tr>
+					<td>Norton Commander 4.0 [278kb]</td>
+					<td><a href="/soft/archive/nc4.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+				</tr>
+				<tr>
+					<td>Norton Commander 5.0 [2180kb]</td>
+					<td><a href="/soft/archive/nc50.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+				</tr>
+				</table>
+				<table border="1" style="margin: auto;">
+				<p>Volcov commanders</p>
+				<tr>
+					<td>Volcov Commander 4.0 [243kb]</td>
+					<td><a href="/soft/archive/vc40.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+				</tr>
+				<tr>
+					<td>Volcov Commander 5.01 [81kb]</td>
+					<td><a href="/soft/archive/vc5.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+				</tr>
+				</table>
+				<table border="1" style="margin: auto;">
+				<p>Other shells</p>
+				<tr>
+					<td>Dosshell [131kb]</td>
+					<td><a href="/soft/archive/dosshell.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+				</tr>
+				</table>
+				<table border="1" style="margin: auto;">
+				<p>Shells for Win 3.X</p>
+				<tr>
+					<td>Calmira [1023kb]</td>
+					<td><a href="/soft/archive/calmir.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+				</tr>
+				<tr>
+					<td>Win logo [168kb]</td>
+					<td><a href="/soft/archive/calmir.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+				</tr>
+				</table>
+				<h4>Archivators Dos, Windows 3x-9x.</h4>
+				<table border="1" style="margin: auto;">
+				<tr>
+					<td>Arj [151kb]</td>
+					<td><a href="/soft/archive/arj.exe"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+				</tr>
+				<tr>
+					<td>7zip DOS [49kb]</td>
+					<td><a href="/soft/archive/7zip.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+				</tr>
+				</table>
+				<h4>Emulators of some vintage systems.</h4>
+				<table border="1" style="margin: auto;">
+				<tr>
+					<td>Computer and game console emulator “Emulator 3000” [1474kb]</td>
+					<td><a href="/soft/archive/3000.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+				</tr>
+				<tr>
+					<td>Apple 2 family emulator [316kb]</td>
+					<td><a href="/soft/archive/Apple2.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+				</tr>
+				<tr>
+					<td>ZX [454kb]</td>
+					<td><a href="/soft/archive/r80v030.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+				</tr>
+				<tr>
+					<td>Radio 86 RK [127kb]</td>
+					<td><a href="/soft/archive/Emurk200.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+				</tr>
+				<tr>
+					<td>BK 0001 [127kb]</td>
+					<td><a href="/soft/archive/Bk0010.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+				</tr>
+				<tr>
+					<td>Korvet [2373kb]</td>
+					<td><a href="/soft/archive/Bk0010.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+				</tr>
+				</table>
+				<p>3dfx emulators</p>
+				<table border="1" style="margin: auto;">
+				<tr>
+					<td>3Dfx Emulator v0.2 from ELZ SOFTWARE [970kb]</td>
+					<td><a href="/soft/archive/3dfx1.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+				</tr>
+				</table>
+				<h4>Programming languages Dos, Windows 3x-9x.</h4>
+				<p>Assembler</p>
+				<table border="1" style="margin: auto;">
+					<tr>
+						<td>Turbo assembler [241kb]</td>
+						<td><a href="/soft/archive/tasm.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Turbo assembler shell [86kb]</td>
+						<td><a href="/soft/archive/ts300.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Microsoft assembler [9254kb]</td>
+						<td><a href="/soft/archive/masm.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Turbo shell [73kb]</td>
+						<td><a href="/soft/archive/ts.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+				</table>
+				<p>Basic</p>
+				<table border="1" style="margin: auto;">
+					<tr>
+						<td>Qbasic [560kb]</td>
+						<td><a href="/soft/archive/qbas4.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Gw basic [60kb]</td>
+						<td><a href="/soft/archive/gwbasic.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>		
+					<tr>
+						<td>Basic ver 2.0 [48kb]</td>
+						<td><a href="/soft/archive/basic.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+				</table>
+				<p>Pascal</p>
+				<table border="1" style="margin: auto;">
+					<tr>
+						<td>Turbo pascal 1.0 [61kb]</td>
+						<td><a href="/soft/archive/tp1.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Turbo pascal 1.0 [61kb]</td>
+						<td><a href="/soft/archive/tp1.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Turbo pascal 2.0 [78kb]</td>
+						<td><a href="/soft/archive/tp20.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Turbo pascal 3.0 [170kb]</td>
+						<td><a href="/soft/archive/tp302.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Turbo pascal 4.0 [170kb]</td>
+						<td><a href="/soft/archive/tp4.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Turbo pascal 5.0 [1198kb]</td>
+						<td><a href="/soft/archive/tp5.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Turbo pascal 7.0 [800kb]</td>
+						<td><a href="/soft/archive/turbo.exe"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+				</table>
+				<p>C</p>
+				<table border="1" style="margin: auto;">
+					<tr>
+						<td>Quick C (1987) [831kb]</td>
+						<td><a href="/soft/archive/msq.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Borland C [4133kb]</td>
+						<td><a href="/soft/archive/bc.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+				</table>
+				<h4>Scientific and pseudoscientific programs.</h4>
+				<p>Astronomy</p>
+				<table border="1" style="margin: auto;">
+					<tr>
+						<td>Gravity [96kb]</td>
+						<td><a href="/soft/archive/gravity.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Jupsat [50kb]</td>
+						<td><a href="/soft/archive/jupsat.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Moon [52kb]</td>
+						<td><a href="/soft/archive/moon.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Star view [178kb]</td>
+						<td><a href="/soft/archive/starview.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Astro [90kb]</td>
+						<td><a href="/soft/archive/astro202.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Solaris [62kb]</td>
+						<td><a href="/soft/archive/sol.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+				</table>
+				<p>Reference books, maps, tests</p>
+				<table border="1" style="margin: auto;">
+					<tr>
+						<td>Flags [150kb]</td>
+						<td><a href="/soft/archive/flags.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+				</table>
+				<h4>Classic Operating Systems</h4>
+				<p>Important</p>
+				<table border="1" style="margin: auto;">
+					<tr>
+						<td>Win image [311kb]</td>
+						<td><p>p.s: This program creates images of some DOS versions. So you can't do without it when creating bootable floppy disks downloaded from this site.</p></td>
+						<td><a href="/soft/archive/winimage.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+				</table>
+				<p>Dos</p>
+				<table border="1" style="margin: auto;">
+					<tr>
+						<td>MS-DOS 1.0 [100kb]</td>
+						<td><a href="/soft/archive/dos1.1.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>MS-DOS 2.11 [84kb]</td>
+						<td><a href="/soft/archive/msdos211.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>MS-DOS 3.3 [420kb]</td>
+						<td><a href="/soft/archive/msdos33.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>MS-DOS 3.30 for MK88, EC1840-** [216kb]</td>
+						<td><a href="/soft/archive/ec1841.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>MS-DOS 5.0 [1276kb]</td>
+						<td><a href="/soft/archive/msdos50.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>MS-DOS 5.0 RUS [3381kb]</td>
+						<td><a href="/soft/archive/msdos50rus.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>MS-DOS 6.22 [1276kb]</td>
+						<td><a href="/soft/archive/msdos622.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>PC DOS [78kb]</td>
+						<td><a href="/soft/archive/pc-dos.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>IBM DOS [100kb]</td>
+						<td><a href="/soft/archive/ibm-dos.exe"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+				</table>
+				<p>Retro versions of Windows</p>
+				<table border="1" style="margin: auto;">
+					<tr>
+						<td>Windows 1.01 [729kb]</td>
+						<td><a href="/soft/archive/win101.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Windows 2.03 [1411kb]</td>
+						<td><a href="/soft/archive/win203.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Windows 2.1 [1449kb]</td>
+						<td><a href="/soft/archive/win211.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Windows/286 Soviet [2293kb]</td>
+						<td><a href="/soft/archive/win21rus.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Windows 3.0 [4606kb]</td>
+						<td><a href="/soft/archive/win30.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Windows 3.1 for workgroups [10553kb]</td>
+						<td><a href="/soft/archive/win311.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Windows NT 3.1 [53000kb]</td>
+						<td><a href="/soft/archive/win31ntfull.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Windows Chicago build 73 [16431kb]</td>
+						<td><a href="/soft/archive/chicago73.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Windows 95 [21836kb]</td>
+						<td><a href="/soft/archive/win95orig.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+				</table>
+				<h4>Local networks, internet</h4>
+				<p>Internet and other networks</p>
+				<table border="1" style="margin: auto;">
+					<tr>
+						<td>Mosaic 2 [242kb]</td>
+						<td><a href="/soft/archive/mosaic2.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Arachne 1.7 [1558kb]</td>
+						<td><a href="/soft/archive/arachne.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Netscape 4.08 for win 3.x [9901kb]</td>
+						<td><a href="/soft/archive/n16-4.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Internet Explorer 5.0 for win 3.x [11239kb]</td>
+						<td><a href="/soft/archive/ie16-50.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Internet Explorer 3.0 [3992kb]</td>
+						<td><a href="/soft/archive/iew31.exe"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Opera 3.51 for win 3.x [1384kb]</td>
+						<td><a href="/soft/archive/opera16-351.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>ICQ for win 3.x [1358kb]</td>
+						<td><a href="/soft/archive/icq.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Netscape navigator [3072kb]</td>
+						<td><a href="/soft/archive/n16e304.exe"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Win dialer [77kb]</td>
+						<td><a href="/soft/archive/windial.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Internet Connect [1384kb]</td>
+						<td><a href="/soft/archive/opera16-351.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>View html [76kb]</td>
+						<td><a href="/soft/archive/viewht.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Internet Connect [1384kb]</td>
+						<td><a href="/soft/archive/opera16-351.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+				</table>
+				<p>FTN & BBS</p>
+				<table border="1" style="margin: auto;">
+					<tr>
+						<td>Tornado BBS [163kb]</td>
+						<td><a href="/soft/archive/tor160b.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Delta 5 BBS [546kb]</td>
+						<td><a href="/soft/archive/202.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Maximus BBS [1692kb]</td>
+						<td><a href="/soft/archive/maxbbs.exe"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>BBS utils [40kb]</td>
+						<td><a href="/soft/archive/utilsbbs.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Fossil driver [35kb]</td>
+						<td><a href="/soft/archive/adf.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Terminal dos [169kb]</td>
+						<td><a href="/soft/archive/tm.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Telix [134kb]</td>
+						<td><a href="/soft/archive/telix.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Fido mail [199kb]</td>
+						<td><a href="/soft/archive/15.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+				</table>
+				<h4>Multimedia tools for DOS & Windows 3x-9x.</h4>
+				<p>Dos players</p>
+				<table border="1" style="margin: auto;">
+					<tr>
+						<td>Dosamp [405kb]</td>
+						<td><a href="/soft/archive/dosamp.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+				</table>
+				<p>Sound programs for Windows 3.x - 9.x</p>
+				<table border="1" style="margin: auto;">
+					<tr>
+						<td>Sound Forge 4.5 [7760kb]</td>
+						<td><a href="/soft/archive/sf45.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Gold wave [210kb]</td>
+						<td><a href="/soft/archive/gw.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>A wave [631kb]</td>
+						<td><a href="/soft/archive/awave.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Winamp 1.0 [195kb]</td>
+						<td><a href="/soft/archive/winamp10.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Winamp 1.2 [207kb]</td>
+						<td><a href="/soft/archive/winamp12.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Win player for win 3.x [825kb]</td>
+						<td><a href="/soft/archive/winamp12.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>MOP [1530kb]</td>
+						<td><a href="/soft/archive/mop.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+				</table>
+				<p>Video programs for Windows 3.x - 9.x</p>
+				<table border="1" style="margin: auto;">
+					<tr>
+						<td>Adobe Premiere 5.0 [30000kb]</td>
+						<td><a href="/soft/archive/apremier5.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Xing mpeg player 3.30 [2230kb]</td>
+						<td><a href="/soft/archive/xmp330rus.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Xing dvd player [1191kb]</td>
+						<td><a href="/soft/archive/xingdvd.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+				</table>
+				<h4>Work and graphics programs for Windows 3x-9x.</h4>
+				<p>Windows 3x-9x graphics programs.</p>
+				<table border="1" style="margin: auto;">
+					<tr>
+						<td>Photoshop 3.0 [9370kb]</td>
+						<td><a href="/soft/archive/photoshop30.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+				</table>
+				<h4>Text editors and tools</h4>
+				<p>Text tools for Windows 3x-9x<p>
+				<table border="1" style="margin: auto;">
+					<tr>
+						<td>Adobe acrobat reader for windows 3.x [4038kb]</td>
+						<td><a href="/soft/archive/acro301.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Microsoft Word Viewer 97 for Windows 3.x [4626kb]</td>
+						<td><a href="/soft/archive/ww.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Power Paint Viewer for Windows 3.x [1858kb]</td>
+						<td><a href="/soft/archive/pp.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+				</table>
+				<p>Text editors for Windows 3x-9x<p>
+				<table border="1" style="margin: auto;">
+					<tr>
+						<td>Microsoft Word 2.0 for Windows 3.x [5814kb]</td>
+						<td><a href="/soft/archive/word20.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Microsoft Excel 4.0 for Windows 3.x [3181kb]</td>
+						<td><a href="/soft/archive/exel40.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+				</table>
+				<h4>Sound drivers for Dos, Windows 3.x</h4>
+				<p>Ess</p>
+				<table border="1" style="margin: auto;">
+					<tr>
+						<td>ess 1868 [192kb]</td>
+						<td><a href="/soft/archive/1868w31.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>ess 1869 [200kb]</td>
+						<td><a href="/soft/archive/1869w31.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>ess 1878 [191kb]</td>
+						<td><a href="/soft/archive/1878w31.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>ess 1879 [199kb]</td>
+						<td><a href="/soft/archive/1868w31.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>ess 1887 [180kb]</td>
+						<td><a href="/soft/archive/1868w31.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>ess xx88 [419kb]</td>
+						<td><a href="/soft/archive/win31drv.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>ess pnp sound card setup [4kb]</td>
+						<td><a href="/soft/archive/init_ess.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+				</table>
+				<p>Creative</p>
+				<table border="1" style="margin: auto;">
+					<tr>
+						<td>Sound Blaster driver package [261kb]</td>
+						<td><a href="/soft/archive/soundbl.arj"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Sound Blaster 16 driver [94kb]</td>
+						<td><a href="/soft/archive/sb16wu.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Sound Blaster 2.0 driver [12kb]</td>
+						<td><a href="/soft/archive/sb20du.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+				</table>
+				<h4>SCSI, USB drivers for DOS/Win 3.x</h4>
+				<p>AK SCSI-1 and SCSI-2 controllers</p>
+				<table border="1" style="margin: auto;">
+					<tr>
+						<td>AK47ISA SCSI1 and SCSI2 controller driver [178kb]</td>
+						<td><a href="/soft/archive/ak47isa_all.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>CSC AK47ISA controller card DOS/Win 3.1 driver [13kb]</td>
+						<td><a href="/soft/archive/ak47isa_dos.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>AK47VLB SCSI1 and SCSI2 controller driver [350kb]</td>
+						<td><a href="/soft/archive/ak47vlb_all.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>CSC AK47VLB controller card DOS/Win 3.1 driver [12kb]</td>
+						<td><a href="/soft/archive/ak47vlb_dos.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+				</table>
+				<p>CSC FC* Controller Card</p>
+				<table border="1" style="margin: auto;">
+					<tr>
+						<td>CSC F3 controller card DOS/Win 3.1 driver [13kb]</td>
+						<td><a href="/soft/archive/fc3_dos.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Set of utilities for operation and diagnostics of FC line controllers [149kb]</td>
+						<td><a href="/soft/archive/fc32scsi_dos.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>CSC FastCache64 IDE Controller driver with support for 2"88 floppy disks [118kb]</td>
+						<td><a href="/soft/archive/fc64ide_dos.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>CSC FastCache64 SCSI Controller driver [118kb]</td>
+						<td><a href="/soft/archive/fc64scsi_dos.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+				</table>
+				<p>Usb Drivers for DOS & Win 9x</p>
+				<table border="1" style="margin: auto;">
+					<tr>
+						<td>Flash drive driver for Windows 98 SE (For english version of windows only) [603kb]</td>
+						<td><a href="/soft/archive/nusb22e.exe"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Flash drive driver for Windows 98 SE (For russian version of windows only) [603kb]</td>
+						<td><a href="/soft/archive/nusb22r.exe"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+				</table>
+				<p>CD-ROM drivers</p>
+				<table border="1" style="margin: auto;">
+					<tr>
+						<td>Dos usb [25kb]</td>
+						<td><a href="/soft/archive/usbdos.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Cd emu [1kb]</td>
+						<td><a href="/soft/archive/cdemu2.rar"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+				</table>
+				<h4>Useful drivers for DOS & Win 3.x</h4>
+				<p>Drivers for work with HDD</p>
+				<table border="1" style="margin: auto;">
+					<tr>
+						<td>FAT 32 for MS-DOS 6.22 [22kb]</td>
+						<td><a href="/soft/archive/fat32dos.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>FAT 32 for Windows NT 4.0 [736kb]</td>
+						<td><a href="/soft/archive/fat32nt.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>NTFS for DOS [37kb]</td>
+						<td><a href="/soft/archive/ntfsdos.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Paragon NTFS for DOS [194kb]</td>
+						<td><a href="/soft/archive/ntfsdos.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>NTFS for Windows 98 SE [754kb]</td>
+						<td><a href="/soft/archive/ntfs98.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Osr2kit [91kb]</td>
+						<td><a href="/soft/archive/osr2kit.exe"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+					<tr>
+						<td>Doslfn [75kb]</td>
+						<td><a href="/soft/archive/doslfn.zip"><img src="/img/download.gif" width="50" height="50" alt="download"></a></td>
+					</tr>
+				</table>
+				Больше софта с фдд5-25 можно скачать <a href="/soft/archive/">здесь</a>.
+            <p>
+                <a href="http://validator.w3.org/markup/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html32" height="31" width="88"></a>
+                <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                    <img style="border:0;width:88px;height:31px"
+                        src="http://jigsaw.w3.org/css-validator/images/vcss"
+                        alt="Valid CSS!" />
+                </a>
+                <a href="http://dmconnect.w10.site/"><img src="http://dmconnect.w10.site/images/banner.gif" width="88" height="31" border="0"></a>
+                <a href="http://elpis.ws" title="ELPiS zine">
+                    <img src="http://elpis.ws/button.gif" alt="ELPiS zine" border="0">
+                </a>
+            </p>
+        </center>
 </body>
 </html>

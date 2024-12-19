@@ -1,164 +1,50 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <html>
 <head>
     <title>Gamma World</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <style type="text/css">
-        /* user styles */
-
-      .snowflake { position: absolute; top: 0; color: #fff; font-size: 20px; }
-
+    <style>
         body {
-            margin: 0;
-            background-image: url("../img/bg.gif");
-            color: #fceaff;
+            background-image: url(../img/bg.gif);
         }
-
-        * {
-            box-sizing: border-box;
+        p, h1, h2, h3, h4, pre {
+            color: white;
         }
-
-        #container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        #header {
-            width: 100%;
-            background-image: url("../img/header.gif");
-            height: 150px;
-        }
-
-        #flex {
-            display: flex;
-            flex-wrap: nowrap; /* Prevent wrapping */
-        }
-
-        div.sidebar {
-            background-color: #241445;
-            width: 200px;
-            padding: 20px;
-            font-size: smaller;
-        }
-
-        div.main {
-            background-color: #43256E;
-            flex: 1;
-            padding: 20px;
-        }
-
-        div.footer {
-            background-color: #13092D;
-            width: 100%;
-            height: 40px;
-            padding: 10px;
-            text-align: center;
-            clear: both; /* Ensure footer is below all content */
-        }
-
-        h1, h2, h3 {
-            color: #ED64F5;
-        }
-
-        h1 {
-            font-size: 25px;
-        }
-
-        .box {
-            background-color: #13092D;
-            border: 1px solid #ED64F5;
-            padding: 10px;
-        }
-    </style>
-    <script type="text/javascript">
-        var snowflakes = [];
-        var snowflakeCount = 50;
-
-        function createSnowflakes() {
-            for (var i = 0; i < snowflakeCount; i++) {
-                var snowflake = document.createElement('div');
-                snowflake.className = 'snowflake';
-                snowflake.innerHTML = '*';
-                snowflake.style.left = Math.random() * 1000 + 'px';
-                snowflake.style.fontSize = Math.random() * 32 + 16 + 'px';
-                snowflake.style.top = Math.random() * document.documentElement.clientHeight + 'px';
-                document.body.appendChild(snowflake);
-                snowflakes.push(snowflake);
-            }
-        }
-
-        function moveSnowflakes() {
-            for (var i = 0; i < snowflakes.length; i++) {
-                var snowflake = snowflakes[i];
-                var top = parseFloat(snowflake.style.top);
-                var left = parseFloat(snowflake.style.left);
-
-                top += Math.random() * 2 + 1;
-                if (top > document.documentElement.clientHeight) {
-                    top = 0;
-                    left = Math.random() * 1000;
-                }
-
-                snowflake.style.top = top + 'px';
-                snowflake.style.left = left + 'px';
-            }
-        }
-
-        function animateSnowflakes() {
-            moveSnowflakes();
-            setTimeout(animateSnowflakes, 30);
-        }
-
-        window.onload = function() {
-            createSnowflakes();
-            animateSnowflakes();
-        };
-    </script>
+    </style>    
 </head>
 <body>
-    <div id="container">
-        <a href="../index.html"><div id="header" style="height: 245px;"></div></a>
-        <div id="headerArea">
-            <div id="flex">
-                <div class="sidebar left">
-                    <h2>Разделы сайта</h2>
-                    <a href="index.html"><img src="../img/software.png" alt="Software"></a>
-                    <a href="feed.rss"><img src="../img/rss.png" alt="RSS"></a>
-                    <a href="http://gid.root.sx"><img src="../img/gid.png" alt="gid without https link"></a>
-                    <a href="gicq.html"><img src="../img/gicq.png" alt="GICQ"></a>
-                    <a href="minetest.html"><img src="../img/minetest.png" alt="Minetest"></a>
-                    <a href="contacts.html"><img src="../img/contacts.png" alt="Contacts"></a>
-                    <a href="/bitbybyte-forum"><img src="../img/forum.png" alt="Форум"></a>
-                    <br>
-                    <p>
-                      <a href="https://validator.w3.org/markup/check?uri=referer"><img
-                        src="https://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Strict" height="31" width="88"></a>
-                    </p>
-                </div>
-                <div class="main">
-                  <p>VepurOVK: https://vepurovk.xyz/vv</p>
-                  <p>VepurOVK Group: https://vepurovk.xyz/gw</p>
-                  <p>OpenVK: https://ovk.to/g63</p>
-                  <p>OpenVK Group: https://ovk.to/gw</p>
-                  <p>Mastodon: https://indieweb.social/@gamma63</p>
-                  <p>Email: webe-not-inc@proton.me</p>
-                  <p>KICQ: 2884835 (inactive)</p>
-                  <p>GICQ: 10000</p>
-                </div>
-                <div class="sidebar right">
-                    <h2>Обновления</h2>
-                    <div class="box">
-                        <p>Обновление дизайна 5 Поколения</p>
-                        <ul style="padding-left:10px;">
-                            <li>Был обновлён дизайн 5 поколения</li>
-                            <li>Gamma ID, перешёл на OpenVK https://gid.root.sx</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer">(C) Gamma World 2024</div>
-        <div class="snowflake"></div>
-    </div>
+        <center>
+            <h2>Разделы сайта</h2>
+            <a href="../index.html"><img src="../img/index.png" alt="Index"></a>
+            <a href="index.html"><img src="../img/fdd525.png" alt="Software from FDD5-25"></a>
+            <!--a href="contents/soft.html"><img src="img/software.png" alt="Software"></a-->
+            <a href="feed.rss"><img src="../img/rss.png" alt="RSS"></a>
+            <a href="http://gid.root.sx"><img src="../img/gid.png" alt="gid (https only)"></a>
+            <a href="gicq.html"><img src="../img/gicq.png" alt="GICQ"></a>
+            <a href="minetest.html"><img src="../img/minecraft.png" alt="Minecraft"></a>
+            <a href="contacts.html"><img src="../img/contacts.png" alt="Contacts"></a>
+            <a href="updates.html"><img src="../img/updates.png" alt="Updates"></a>
+            <a href="/bitbybyte-forum"><img src="../img/forum.png" alt="Форум"></a>
+            <p>VepurOVK: https://vepurovk.xyz/vv</p>
+            <p>VepurOVK Group: https://vepurovk.xyz/gw</p>
+            <p>OpenVK: https://ovk.to/g63</p>
+            <p>OpenVK Group: https://ovk.to/gw</p>
+            <p>Mastodon: https://indieweb.social/@gamma63</p>
+            <p>Email: webe-not-inc@proton.me</p>
+            <p>KICQ: 2884835 (inactive)</p>
+            <p>GICQ: 10000</p>
+            <p>
+                <a href="http://validator.w3.org/markup/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html32" height="31" width="88"></a>
+                <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                    <img style="border:0;width:88px;height:31px"
+                        src="http://jigsaw.w3.org/css-validator/images/vcss"
+                        alt="Valid CSS!" />
+                </a>
+                <a href="http://dmconnect.w10.site/"><img src="http://dmconnect.w10.site/images/banner.gif" width="88" height="31" border="0"></a>
+                <a href="http://elpis.ws" title="ELPiS zine">
+                    <img src="http://elpis.ws/button.gif" alt="ELPiS zine" border="0">
+                </a>
+            </p>
+        </center>
 </body>
 </html>
