@@ -1,6 +1,0 @@
-*.neocities.org
-*.narod.ws
-*.narod.ru
-*.serv00.net
-gamma-world.eu
-bitview.net
