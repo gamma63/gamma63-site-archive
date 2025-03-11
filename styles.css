@@ -158,6 +158,11 @@ footer {
     height: 40px;
     padding: 10px;
     text-align: center;
+    h3 {
+        color: white;
+    }
+    text-shadow: 2px 2px 5px black;
+
     /* this centers the footer text */
 }
 
