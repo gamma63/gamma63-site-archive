@@ -36,7 +36,7 @@ before and after the text */
 /* if you want something (like the header) to be Wider than
 the other elements, you will need to move that div outside
 of the container */
-#container {
+#container { 
     max-width: 900px;
     /* this is the width of your layout! */
     /* if you change the above value, scroll to the bottom
@@ -83,7 +83,8 @@ you can add them directly to the <div id="header"></div> element! */
 
 /* navigation links*/
 #navbar li a {
-    color: #000000;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px black;
     /* navbar text color */
     font-weight: 800;
     text-decoration: none;
