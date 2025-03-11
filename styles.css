@@ -124,6 +124,19 @@ main {
     order: 2;
 }
 
+.badge {
+    width: 315px;
+    padding-bottom: 40px;
+}
+
+.badge textarea {
+    display: inline-block;
+    width: 70%;
+    height: 50px;
+    resize: none;
+    color: black;
+}
+
 /* what's this "order" stuff about??
 allow me to explain!
 if you're using both sidebars, the "order" value
