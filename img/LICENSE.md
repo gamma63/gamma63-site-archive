@@ -1,1 +1,0 @@
-# Textures that were taken from PB95 are not licensed under the LGPL do not use textures for commercial purposes
