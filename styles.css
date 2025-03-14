@@ -54,7 +54,7 @@ EXCEPT for the navigation */
 #header {
     width: 100%;
     /* header color here! */
-    height: 150px;
+    height: 170px;
     /* this is only for a background image! */
     /* if you want to put images IN the header, 
 you can add them directly to the <div id="header"></div> element! */
