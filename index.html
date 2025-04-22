@@ -2,11 +2,88 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Gamma World</title>
+        <title>Delta Gamma</title>
         <link rel="stylesheet" href="crt.css">
         <link rel="stylesheet" href="styles.css">
+        <script type="text/javascript">
+            message = "☢ DELTA GAMMA ☢ ";
+            function step() {
+                message = message.substr(1) + message.substr(0,1);
+                document.title = message.substr(0,15);
+            }
+        </script>
     </head>
-    <body>
+    <body onload="setInterval(step,200)">
+        <div class="player">
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+            <!-------MUSIC PLAYER BY GLENTHEMES------->
+            <script src="//static.tumblr.com/gtjt4bo/QRmphdsdv/glenplayer02.js"></script>
+            
+            <style type="text/css">
+            /*-------MUSIC PLAYER BY GLENTHEMES-------*/
+            #glenplayer02 {
+            position:top-left;
+            top:35px;
+            left:55px;
+            width:30px
+            ;z-index:5
+            }
+            div.ex2 {
+            width: 27px;
+            background:white;
+            opacity:0.75;
+            margin: auto;
+            border: 3px double #000;
+            padding:5px;
+            }
+            #glenplayer02 a {text-decoration:none;}
+            
+            #glenplayer02 > div {
+            align-self:center;
+            -webkit-align-self:center;
+            }
+            
+            .music-controls {
+            user-select:none;
+            -webkit-user-select:none;
+            width:13px;
+            font-size:13px;
+            cursor:pointer;
+            }
+            
+            .playy, .pausee {color:#000;} /* color of play & pause buttons */
+            
+            .pausee {display:none;}
+            
+            .sonata {
+            margin-left:10px;
+            color:#222; /* color of music note symbol */
+            }
+            
+            .labeltext {
+            margin-left:8px;
+            font-family:courier new;
+            font-size:9px;
+            color:#222; /* color of song title */
+            }
+            
+            </style>
+            <body>
+            <!-------MUSIC PLAYER BY GLENTHEMES------->
+            <div id="glenplayer02">
+            <div class="ex2">
+            <div class="music-controls" onclick="songstart();">
+            <div class="playy">►</div>
+            <div class="pausee">❚❚</div>
+            </div>
+            <div class="sonata"> </div>
+            <div class="labeltext"></div>
+            </div><!--end music player-->
+            </div>
+            
+            <audio id="tune" src="snd/wma.mp3" audio"></audio>
+
         <div id="container"><div id="header"></div>
             <div id="headerArea">
             <div class="crt">
@@ -60,7 +137,6 @@
         <footer id="footer" style="margin-top: 0px;">
             <h3>(C) Gamma World 2024-2025</h3>
         </footer>
-        <audio src="snd/wma.mp3" autoplay loop></audio>
         </div>
         </div>
     </body>
