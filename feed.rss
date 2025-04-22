@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+    <item>
+        <title>Added RSS feed</title>
+        <guid>id3</guid>
+        <pubDate>Tuesday, April 22, 2025 22:46:17 AM GMT+03:00</pubDate>
+    </item>
+    <item>
+        <title>Migration to neocities</title>
+        <guid>id2</guid>
+        <pubDate>Tuesday, April 22, 2025 12:00:00 AM GMT+03:00</pubDate>
+        <description>After 235 days, I decided to switch hosting because of the "perestroika" inside of the project.</description>
+    </item>
+    <item>
+        <title>Small update</title>
+        <guid>id1</guid>
+        <pubDate>Tuesday, April 22, 2025 5:12:00 AM GMT+03:00</pubDate>
+        <description>Added Stalker cursor, added ability to play/stop music, added animated title.</description>
+    </item>
+</channel>
+<title>Title of your Feed</title>
+<link>https://delta-gamma.org</link>
+<description>Delta Gamma website RSS feed</description>
+</rss>
