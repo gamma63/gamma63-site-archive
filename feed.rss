@@ -2,6 +2,11 @@
 <rss version="2.0">
 <channel>
     <item>
+        <title>Added exchange rate</title>
+        <guid>id4</guid>
+        <pubDate>Wednesday, April 23, 2025 1:42:36 PM GMT</pubDate>
+    </item>
+    <item>
         <title>Added RSS feed</title>
         <guid>id3</guid>
         <pubDate>Tuesday, April 22, 2025 10:46:17 PM GMT+03:00</pubDate>
